@@ -28,43 +28,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="garden-events"
+                        data-filter="weddings"
                     >
                         Weddings
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="tea-house"
+                        data-filter="graduations"
                     >
                         Graduations
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="weddings"
+                        data-filter="baby-showers"
                     >
                         Baby Showers
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="celebrations"
+                        data-filter="bridal-showers"
                     >
                         Bridal Showers
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="celebrations"
+                        data-filter="retreats"
                     >
                         Retreats
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="celebrations"
+                        data-filter="workshops"
                     >
                         Workshops
                     </button>
                     <button
                         class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="celebrations"
+                        data-filter="community-events-and-markets"
                     >
                         Community Events and Markets
                     </button>
@@ -77,49 +77,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <!-- Masonry Collage Grid -->
                 <div class="gallery-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" id="gallery-grid">
-                    <!-- Garden Events - Large Feature -->
-                    <div class="gallery-item group relative col-span-2 row-span-2 rounded-2xl overflow-hidden" data-category="garden-events">
+                    <div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
                         <img
-                            src="/img/gallery/placeholder-garden-1.jpg"
-                            alt="Garden wedding ceremony at Himaya Garden"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Garden Events</p>
-                            <h3 class="font-serif text-xl text-white">Sunset Ceremony</h3>
-                        </div>
-                    </div>
-
-                    <!-- Tea House -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="tea-house">
-                        <img
-                            src="/img/gallery/placeholder-tea-1.jpg"
-                            alt="High tea table setting"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Tea House</p>
-                            <h3 class="font-serif text-lg text-white">Elegant Tablescape</h3>
-                        </div>
-                    </div>
-
-                    <!-- Weddings -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="/img/gallery/placeholder-wedding-1.jpg"
-                            alt="Bride and groom in garden"
+                            src="media/img/gallery/Film_003.jpg"
+                            alt="Garden Romance"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -133,145 +94,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <h3 class="font-serif text-lg text-white">Garden Romance</h3>
                         </div>
                     </div>
-
-                    <!-- Celebrations -->
-                    <div class="gallery-item group relative col-span-2 rounded-2xl overflow-hidden" data-category="celebrations">
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
                         <img
-                            src="/img/gallery/placeholder-celebration-1.jpg"
-                            alt="Birthday celebration setup"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Celebrations</p>
-                            <h3 class="font-serif text-xl text-white">Milestone Moment</h3>
-                        </div>
-                    </div>
-
-                    <!-- Tea House - Tall -->
-                    <div class="gallery-item group relative row-span-2 rounded-2xl overflow-hidden" data-category="tea-house">
-                        <img
-                            src="/img/gallery/placeholder-tea-2.jpg"
-                            alt="Three-tier tea stand"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Tea House</p>
-                            <h3 class="font-serif text-lg text-white">High Tea Service</h3>
-                        </div>
-                    </div>
-
-                    <!-- Garden Events -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="garden-events">
-                        <img
-                            src="/img/gallery/placeholder-garden-2.jpg"
-                            alt="Garden reception at dusk"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Garden Events</p>
-                            <h3 class="font-serif text-lg text-white">Evening Reception</h3>
-                        </div>
-                    </div>
-
-                    <!-- Weddings - Tall -->
-                    <div class="gallery-item group relative row-span-2 rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="/img/gallery/placeholder-wedding-2.jpg"
-                            alt="Wedding party portrait"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Bridal Party</h3>
-                        </div>
-                    </div>
-
-                    <!-- Celebrations -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="celebrations">
-                        <img
-                            src="/img/gallery/placeholder-celebration-2.jpg"
-                            alt="Bridal shower setup"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Celebrations</p>
-                            <h3 class="font-serif text-lg text-white">Bridal Shower</h3>
-                        </div>
-                    </div>
-
-                    <!-- Garden Events - Wide -->
-                    <div class="gallery-item group relative col-span-2 rounded-2xl overflow-hidden" data-category="garden-events">
-                        <img
-                            src="/img/gallery/placeholder-garden-3.jpg"
-                            alt="Garden venue aerial view"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Garden Events</p>
-                            <h3 class="font-serif text-xl text-white">The Full Garden</h3>
-                        </div>
-                    </div>
-
-                    <!-- Tea House - Wide -->
-                    <div class="gallery-item group relative col-span-2 rounded-2xl overflow-hidden" data-category="tea-house">
-                        <img
-                            src="/img/gallery/placeholder-tea-3.jpg"
-                            alt="Tea house interior panoramic"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Tea House</p>
-                            <h3 class="font-serif text-xl text-white">The Tea Room</h3>
-                        </div>
-                    </div>
-
-                    <!-- Weddings -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="/img/gallery/placeholder-wedding-3.jpg"
-                            alt="First dance under lights"
+                            src="media/img/gallery/Film_024.jpg"
+                            alt="First Dance"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -285,12 +111,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <h3 class="font-serif text-lg text-white">First Dance</h3>
                         </div>
                     </div>
-
-                    <!-- Celebrations - Tall -->
-                    <div class="gallery-item group relative row-span-2 rounded-2xl overflow-hidden" data-category="celebrations">
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="portraits">
                         <img
-                            src="/img/gallery/placeholder-celebration-3.jpg"
-                            alt="Birthday tea party"
+                            src="media/img/gallery/IMG_0784.jpg"
+                            alt="Golden Hour"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -300,16 +124,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div
                             class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
                         >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Celebrations</p>
-                            <h3 class="font-serif text-lg text-white">Tea Party Birthday</h3>
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Portraits</p>
+                            <h3 class="font-serif text-lg text-white">Golden Hour</h3>
                         </div>
                     </div>
-
-                    <!-- Garden Events -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="garden-events">
+                    <div class="gallery-item group row-span-2 col-span-2 relative rounded-2xl overflow-hidden" data-category="portraits">
                         <img
-                            src="/img/gallery/placeholder-garden-4.jpg"
-                            alt="Garden ceremony arch"
+                            src="media/img/gallery/IMG_0793.jpg"
+                            alt="Natural Light"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -319,16 +141,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div
                             class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
                         >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Garden Events</p>
-                            <h3 class="font-serif text-lg text-white">Ceremony Arch</h3>
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Portraits</p>
+                            <h3 class="font-serif text-lg text-white">Natural Light</h3>
                         </div>
                     </div>
-
-                    <!-- Tea House -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="tea-house">
+                    <div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
                         <img
-                            src="/img/gallery/placeholder-tea-4.jpg"
-                            alt="Filipino high tea spread"
+                            src="media/img/gallery/Sam+Robert-65_websize.jpg"
+                            alt="Ceremony Moments"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -337,36 +157,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         </div>
                         <div
                             class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Tea House</p>
-                            <h3 class="font-serif text-lg text-white">Filipino High Tea</h3>
-                        </div>
-                    </div>
-
-                    <!-- Weddings - Wide -->
-                    <div class="gallery-item group relative col-span-2 rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="/img/gallery/placeholder-wedding-4.jpg"
-                            alt="Wedding reception long table"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
                         >
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-xl text-white">Reception Dinner</h3>
+                            <h3 class="font-serif text-lg text-white">Ceremony Moments</h3>
                         </div>
                     </div>
-
-                    <!-- Celebrations -->
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="celebrations">
+                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
                         <img
-                            src="/img/gallery/placeholder-celebration-4.jpg"
-                            alt="Corporate gathering"
+                            src="media/img/gallery/Sam+Robert-81_websize.jpg"
+                            alt="Reception Joy"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div
@@ -376,8 +175,144 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div
                             class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
                         >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Celebrations</p>
-                            <h3 class="font-serif text-lg text-white">Corporate Event</h3>
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Reception Joy</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img
+                            src="media/img/gallery/Sam+Robert-87_websize.jpg"
+                            alt="Candid Laughter"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Candid Laughter</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-3 row-span-3 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img
+                            src="media/img/gallery/Sam+Robert-88_websize.jpg"
+                            alt="Evening Glow"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Evening Glow</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/1fff494b-e54a-4fd8-b6ee-be8f2586d7ba.jpg"
+                            alt="The Graduate"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">The Graduate</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/20260518_140135_B84308.jpeg"
+                            alt="Cap & Gown"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">Cap & Gown</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/402c22f8-733c-469b-9ad6-47413aa23a82.jpg"
+                            alt="Class of 2026"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">Class of 2026</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item group row-span-2 col-span-2 relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/8936f173-dcac-462f-a7f5-9d9e5b5a8a47.jpg"
+                            alt="Proud Moment"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">Proud Moment</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/IMG_9922.jpg"
+                            alt="New Beginnings"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">New Beginnings</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img
+                            src="media/img/gallery/image000001.jpg"
+                            alt="Celebration Day"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                        >
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">Celebration Day</h3>
                         </div>
                     </div>
                 </div>
