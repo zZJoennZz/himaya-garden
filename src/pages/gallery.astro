@@ -20,54 +20,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
                 <!-- Category Filter -->
                 <div class="fade-in delay-3 flex flex-wrap justify-center gap-3" id="gallery-filters">
-                    <button
-                        class="filter-btn active px-6 py-3 rounded-full bg-sage text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="all"
-                    >
-                        All
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="weddings"
-                    >
-                        Weddings
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="graduations"
-                    >
-                        Graduations
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="baby-showers"
-                    >
-                        Baby Showers
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="bridal-showers"
-                    >
-                        Bridal Showers
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="retreats"
-                    >
-                        Retreats
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="workshops"
-                    >
-                        Workshops
-                    </button>
-                    <button
-                        class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all"
-                        data-filter="community-events-and-markets"
-                    >
-                        Community Events and Markets
-                    </button>
+                    <button class="filter-btn active px-6 py-3 rounded-full bg-sage text-white font-medium text-sm tracking-wide transition-all" data-filter="all">All</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="weddings">Weddings</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="graduations">Graduations</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="baby-showers">Baby Showers</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="retreats">Retreats</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="workshops">Workshops</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="community-events-and-markets">Community Events and Markets</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-sage/10 text-sage hover:bg-sage hover:text-white font-medium text-sm tracking-wide transition-all" data-filter="venue">Venue</button>
                 </div>
             </div>
         </section>
@@ -75,249 +35,842 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Gallery Grid -->
         <section class="py-24 bg-cream">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <!-- Masonry Collage Grid -->
                 <div class="gallery-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4" id="gallery-grid">
-                    <div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Film_003.jpg"
-                            alt="Garden Romance"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    <!-- VIDEO (commented out)
+<div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/aerial shot of wedding garden venue.mov" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Garden Romance</h3>
+                            <h3 class="font-serif text-lg text-white">Aerial Venue View</h3>
                         </div>
                     </div>
-                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Film_024.jpg"
-                            alt="First Dance"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/panning shot of the wedding.mp4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Wedding Panorama</h3>
                         </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    </div>
+-->
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple backdrop 2.jpg" alt="wedding couple backdrop 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Couple Backdrop</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple backdrop.jpg" alt="wedding couple backdrop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Elegant Backdrop</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple dancing  in front of guests.jpg" alt="wedding couple dancing  in front of guests" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
                             <h3 class="font-serif text-lg text-white">First Dance</h3>
                         </div>
                     </div>
-                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="portraits">
-                        <img
-                            src="media/img/gallery/IMG_0784.jpg"
-                            alt="Golden Hour"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Portraits</p>
-                            <h3 class="font-serif text-lg text-white">Golden Hour</h3>
-                        </div>
-                    </div>
-                    <div class="gallery-item group row-span-2 col-span-2 relative rounded-2xl overflow-hidden" data-category="portraits">
-                        <img
-                            src="media/img/gallery/IMG_0793.jpg"
-                            alt="Natural Light"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Portraits</p>
-                            <h3 class="font-serif text-lg text-white">Natural Light</h3>
-                        </div>
-                    </div>
-                    <div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Sam+Robert-65_websize.jpg"
-                            alt="Ceremony Moments"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple dancing.jpg" alt="wedding couple dancing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Ceremony Moments</h3>
+                            <h3 class="font-serif text-lg text-white">Dancing Together</h3>
                         </div>
                     </div>
-                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Sam+Robert-81_websize.jpg"
-                            alt="Reception Joy"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple kissing in the garden.jpg" alt="wedding couple kissing in the garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Reception Joy</h3>
+                            <h3 class="font-serif text-lg text-white">Garden Kiss</h3>
                         </div>
                     </div>
-                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Sam+Robert-87_websize.jpg"
-                            alt="Candid Laughter"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple laying down in the grass.jpg" alt="wedding couple laying down in the grass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Candid Laughter</h3>
+                            <h3 class="font-serif text-lg text-white">Laying in the Grass</h3>
                         </div>
                     </div>
-                    <div class="gallery-item col-span-3 row-span-3 group relative rounded-2xl overflow-hidden" data-category="weddings">
-                        <img
-                            src="media/img/gallery/Sam+Robert-88_websize.jpg"
-                            alt="Evening Glow"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple lookin at each other in the garden.jpg" alt="wedding couple lookin at each other in the garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
-                            <h3 class="font-serif text-lg text-white">Evening Glow</h3>
+                            <h3 class="font-serif text-lg text-white">Garden Gaze</h3>
                         </div>
                     </div>
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/1fff494b-e54a-4fd8-b6ee-be8f2586d7ba.jpg"
-                            alt="The Graduate"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">The Graduate</h3>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple photo in the table.jpg" alt="wedding couple photo in the table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Table Portrait</h3>
                         </div>
                     </div>
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/20260518_140135_B84308.jpeg"
-                            alt="Cap & Gown"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">Cap & Gown</h3>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple sitting in the grass.jpg" alt="wedding couple sitting in the grass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Sitting in the Grass</h3>
                         </div>
                     </div>
-                    <div class="gallery-item group relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/402c22f8-733c-469b-9ad6-47413aa23a82.jpg"
-                            alt="Class of 2026"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">Class of 2026</h3>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple walking from the shade.jpg" alt="wedding couple walking from the shade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">From the Shade</h3>
                         </div>
                     </div>
-                    <div class="gallery-item group row-span-2 col-span-2 relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/8936f173-dcac-462f-a7f5-9d9e5b5a8a47.jpg"
-                            alt="Proud Moment"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">Proud Moment</h3>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding couple walking in the aisle.jpg" alt="wedding couple walking in the aisle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Down the Aisle</h3>
                         </div>
                     </div>
-                    <div class="gallery-item row-span-2 col-span-2 group relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/IMG_9922.jpg"
-                            alt="New Beginnings"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding dress spread in the garden grass with the sandals and flowers.jpg" alt="wedding dress spread in the garden grass with the sandals and flowers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Dress Detail</h3>
                         </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
-                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">New Beginnings</h3>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding family and the couple in the table.jpg" alt="wedding family and the couple in the table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Family at the Table</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding family photo.jpg" alt="wedding family photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Family Portrait</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding flours and sandals in the grass.jpg" alt="wedding flours and sandals in the grass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Flowers & Sandals</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding food in the table.jpg" alt="wedding food in the table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Wedding Feast</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding groom carrying the bride 1.jpg" alt="wedding groom carrying the bride 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Carrying the Bride</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding groom carrying the bride 2.jpg" alt="wedding groom carrying the bride 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Joyful Carry</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding guests dancing 1.jpg" alt="wedding guests dancing 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Guests Dancing</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding guests dancing 2.jpg" alt="wedding guests dancing 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Celebration Dance</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding photo of groom.jpg" alt="wedding photo of groom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">The Groom</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding photo of lumpia.jpg" alt="wedding photo of lumpia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Lumpia</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding photo of the bride's dress hanging in the tree.jpg" alt="wedding photo of the bride's dress hanging in the tree" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Dress in the Tree</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/wedding shot of the venue with the wedding guests.jpg" alt="wedding shot of the venue with the wedding guests" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Venue with Guests</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="weddings">
+                        <img src="media/img/gallery/weddinng empty seats at the garden venue.jpg" alt="weddinng empty seats at the garden venue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Weddings</p>
+                            <h3 class="font-serif text-lg text-white">Empty Seats</h3>
                         </div>
                     </div>
                     <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="graduations">
-                        <img
-                            src="media/img/gallery/image000001.jpg"
-                            alt="Celebration Day"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        >
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
-                        >
+                        <img src="media/img/gallery/Graduation elevated shot.jpg" alt="Graduation elevated shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                             <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
-                            <h3 class="font-serif text-lg text-white">Celebration Day</h3>
+                            <h3 class="font-serif text-lg text-white">Elevated View</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="graduations">
+                        <img src="media/img/gallery/Graduation guests at the garden venue.jpg" alt="Graduation guests at the garden venue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Graduations</p>
+                            <h3 class="font-serif text-lg text-white">Garden Guests</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Guests cake painting at the table.jpg" alt="Guests cake painting at the table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Cake Painting</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 1.JPG" alt="Two women food painting on grass 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Food Painting</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 2.jpeg" alt="Two women food painting on grass 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Painting Together</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 3.JPG" alt="Two women food painting on grass 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Creative Moment</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 4.JPG" alt="Two women food painting on grass 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Garden Art</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 5.JPG" alt="Two women food painting on grass 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Painting Fun</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 6.JPG" alt="Two women food painting on grass 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Art in Nature</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="baby-showers">
+                        <img src="media/img/gallery/Two women food painting on grass 7.JPG" alt="Two women food painting on grass 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Baby Showers</p>
+                            <h3 class="font-serif text-lg text-white">Creative Celebration</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 1.JPG" alt="People doing yoga in the garden 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Garden Yoga</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 2.JPG" alt="People doing yoga in the garden 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Peaceful Pose</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 3.JPG" alt="People doing yoga in the garden 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Serene Stretch</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 4.JPG" alt="People doing yoga in the garden 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Mindful Movement</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 5.JPG" alt="People doing yoga in the garden 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Group Flow</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="retreats">
+                        <img src="media/img/gallery/People doing yoga in the garden 6.JPG" alt="People doing yoga in the garden 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Retreats</p>
+                            <h3 class="font-serif text-lg text-white">Garden Wellness</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea 2 people sitting at the balcony.jpg" alt="High Tea 2 people sitting at the balcony" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Balcony High Tea</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea backdrop.jpg" alt="High Tea backdrop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Tea Backdrop</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea dessert tiered food stand 1.jpg" alt="High Tea dessert tiered food stand 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Tiered Desserts</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea dessert tiered food stand 2.jpg" alt="High Tea dessert tiered food stand 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Sweet Stand</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea dessert tiered food stand 3.JPG" alt="High Tea dessert tiered food stand 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Elegant Tiers</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea food.jpg" alt="High Tea food" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Tea Spread</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea guests at the photo booth.jpeg" alt="High Tea guests at the photo booth" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth Fun</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea pancit 1.jpg" alt="High Tea pancit 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Pancit</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea pancit 2.jpg" alt="High Tea pancit 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Pancit Close-up</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea pancit shot from the top.jpg" alt="High Tea pancit shot from the top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Overhead Pancit</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea people at photo booth 2.jpg" alt="High Tea people at photo booth 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Booth Memories</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea people at photo booth 3.jpg" alt="High Tea people at photo booth 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth 3</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea people at photo booth 4.jpg" alt="High Tea people at photo booth 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth 4</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea people at photo booth 5.jpg" alt="High Tea people at photo booth 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth 5</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea shot of lumpia from top.jpg" alt="High Tea shot of lumpia from top" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Lumpia from Above</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea tiered food stand 1.jpg" alt="High Tea tiered food stand 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Food Stand 1</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High Tea tiered food stand 2.jpg" alt="High Tea tiered food stand 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Food Stand 2</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/High tiered food stand.jpg" alt="High tiered food stand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Grand Stand</h3>
+                        </div>
+                    </div>
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/person at high tea talking sitting at the table in the balcony.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Balcony Conversation</h3>
+                        </div>
+                    </div>
+-->
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 1.jpg" alt="Tiered dessert 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 1</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 2.jpg" alt="Tiered dessert 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 2</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 3.jpg" alt="Tiered dessert 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 3</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 4.jpg" alt="Tiered dessert 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 4</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 5.jpg" alt="Tiered dessert 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 5</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <img src="media/img/gallery/Tiered dessert 6.jpg" alt="Tiered dessert 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Dessert Tier 6</h3>
+                        </div>
+                    </div>
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="workshops">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/video of pancit.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Workshops</p>
+                            <h3 class="font-serif text-lg text-white">Pancit Video</h3>
+                        </div>
+                    </div>
+-->
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Dancing at the Filipino history month 1.jpg" alt="Dancing at the Filipino history month 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Filipino History Dance 1</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Dancing at the Filipino history month 2.jpg" alt="Dancing at the Filipino history month 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Filipino History Dance 2</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Dancing at the Filipino history month 3.jpg" alt="Dancing at the Filipino history month 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Filipino History Dance 3</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/DJ Herm at the dancing event.JPG" alt="DJ Herm at the dancing event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">DJ Herm</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Dragonfly Cakes prepared for the dance event.JPG" alt="Dragonfly Cakes prepared for the dance event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Dragonfly Cakes</h3>
+                        </div>
+                    </div>
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/filipino history month dancing 1.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Dancing Video 1</h3>
+                        </div>
+                    </div>
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/filipino history month dancing 2.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Dancing Video 2</h3>
+                        </div>
+                    </div>
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/filipino history month dancing 3.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Dancing Video 3</h3>
+                        </div>
+                    </div>
+-->
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Filipino history month group photo 1.jpg" alt="Filipino history month group photo 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Group Photo 1</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/Filipino history month group photo 2.jpg" alt="Filipino history month group photo 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Group Photo 2</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/People at the dancing event.JPG" alt="People at the dancing event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Dancing Event</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="community-events-and-markets">
+                        <img src="media/img/gallery/people dancing in the garden.JPG" alt="people dancing in the garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Community Events and Markets</p>
+                            <h3 class="font-serif text-lg text-white">Garden Dancing</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Garden event venue.jpg" alt="Garden event venue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Event Venue</h3>
+                        </div>
+                    </div>
+                    <!-- VIDEO (commented out)
+<div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/panning shot of the empty garden venue 1.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Venue Pan 1</h3>
+                        </div>
+                    </div>
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item col-span-2 row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/panning shot of the empty garden venue 2.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Venue Pan 2</h3>
+                        </div>
+                    </div>
+-->
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Owners at an event.jpeg" alt="Owners at an event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Owners</h3>
+                        </div>
+                    </div>
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/people posing at the photo booth 1.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth Video 1</h3>
+                        </div>
+                    </div>
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/people posing at the photo booth 2.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Photo Booth Video 2</h3>
+                        </div>
+                    </div>
+-->
+                    <!-- VIDEO (commented out)
+<div class="gallery-item  group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="media/videos/photo booth backdrop.MP4" type="video/mp4" />
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Backdrop Video</h3>
+                        </div>
+                    </div>
+-->
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 1.jpg" alt="Private event at the garden 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 1</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 2.jpg" alt="Private event at the garden 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 2</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 3.jpg" alt="Private event at the garden 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 3</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 4.jpg" alt="Private event at the garden 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 4</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 5.jpg" alt="Private event at the garden 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 5</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 6.jpg" alt="Private event at the garden 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 6</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden 7.jpg" alt="Private event at the garden 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event 7</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event at the garden with the guest 2.jpg" alt="Private event at the garden with the guest 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Private Event Guest</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item row-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Private event Dragonfly Cakes.jpg" alt="Private event Dragonfly Cakes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Dragonfly Cakes Event</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item col-span-2 group relative rounded-2xl overflow-hidden" data-category="venue">
+                        <img src="media/img/gallery/Shot of the garden venue.jpg" alt="Shot of the garden venue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sage text-xs uppercase tracking-wider mb-1">Venue</p>
+                            <h3 class="font-serif text-lg text-white">Garden Venue</h3>
                         </div>
                     </div>
                 </div>
 
-                <!-- Empty State (hidden by default) -->
+                <!-- Empty State -->
                 <div id="empty-state" class="hidden text-center py-20">
                     <p class="font-serif text-2xl text-charcoal mb-2">No images in this category yet.</p>
                     <p class="text-stone">Check back soon for more moments from Himaya Garden.</p>
@@ -353,12 +906,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     Your story deserves a beautiful setting. Let's create something unforgettable together.
                 </p>
                 <div class="fade-in delay-2 flex flex-wrap gap-4 justify-center">
-                    <a href="/contact" class="btn-primary bg-white text-charcoal hover:bg-charcoal hover:text-white transition-all">
-                        Schedule a Tour
-                    </a>
-                    <a href="tel:+15204671033" class="btn-secondary border-white/30 text-white hover:bg-white hover:text-charcoal transition-all">
-                        Call (520) 467-1033
-                    </a>
+                    <a href="/contact" class="btn-primary bg-white text-charcoal hover:bg-charcoal hover:text-white transition-all">Schedule a Tour</a>
+                    <a href="tel:+15204671033" class="btn-secondary border-white/30 text-white hover:bg-white hover:text-charcoal transition-all">Call (520) 467-1033</a>
                 </div>
             </div>
         </section>
@@ -366,9 +915,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
-            // -----------------------------
-            // SOURCE OF TRUTH
-            // -----------------------------
             var galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
 
             var state = {
@@ -382,15 +928,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 }),
             };
 
-            // -----------------------------
-            // FILTER UI
-            // -----------------------------
             var filterBtns = document.querySelectorAll('.filter-btn');
             var emptyState = document.getElementById('empty-state');
 
             function applyFilter(filter) {
                 state.activeFilter = filter;
-
                 var visibleCount = 0;
 
                 state.items.forEach(function (item) {
@@ -422,72 +964,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         b.classList.remove('active', 'bg-sage', 'text-white');
                         b.classList.add('bg-sage/10', 'text-sage');
                     });
-
                     btn.classList.add('active', 'bg-sage', 'text-white');
                     btn.classList.remove('bg-sage/10', 'text-sage');
-
                     applyFilter(btn.dataset.filter);
                 });
             });
         });
     </script>
+
+    <style>
+        .gallery-grid {
+            grid-auto-rows: 200px;
+            grid-auto-flow: dense;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-auto-rows: 250px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-auto-rows: 280px;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+
+        .gallery-item.col-span-2 {
+            grid-column: span 2;
+        }
+
+        .gallery-item.row-span-2 {
+            grid-row: span 2;
+        }
+
+        .filter-btn.active {
+            background-color: #a3b18a;
+            color: white;
+        }
+
+        .gallery-item {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    </style>
 </BaseLayout>
-
-<style>
-    /* Gallery Grid - Masonry via CSS Grid */
-    .gallery-grid {
-        grid-auto-rows: 200px;
-        grid-auto-flow: dense;
-    }
-
-    @media (min-width: 768px) {
-        .gallery-grid {
-            grid-auto-rows: 250px;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .gallery-grid {
-            grid-auto-rows: 280px;
-        }
-    }
-
-    .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 1rem;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.7s ease;
-    }
-
-    .gallery-item:hover img {
-        transform: scale(1.05);
-    }
-
-    /* Row/Column spans for collage effect */
-    .gallery-item.col-span-2 {
-        grid-column: span 2;
-    }
-
-    .gallery-item.row-span-2 {
-        grid-row: span 2;
-    }
-
-    /* Filter button active state */
-    .filter-btn.active {
-        background-color: #a3b18a;
-        color: white;
-    }
-
-    /* Smooth hide/show for filter */
-    .gallery-item {
-        transition:
-            opacity 0.3s ease,
-            transform 0.3s ease;
-    }
-</style>
