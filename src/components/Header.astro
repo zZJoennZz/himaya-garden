@@ -141,6 +141,7 @@ const navLinks = [
     .mobile-nav {
         position: fixed;
         inset: 0;
+        height: 100vh;
         background-color: var(--color-cream);
         z-index: 40;
         display: flex;
@@ -151,6 +152,9 @@ const navLinks = [
         transition: all 0.7s ease-out;
         opacity: 0;
         visibility: hidden;
+        overflow-y: auto;   
+        padding-top: 5rem; 
+        padding-bottom: 2rem;
     }
 
     .mobile-nav.open {
