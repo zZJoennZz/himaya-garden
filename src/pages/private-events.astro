@@ -108,8 +108,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <!-- Slider Track -->
                     <div class="slider-track-wrapper overflow-hidden">
                         <div class="slider-track flex transition-transform duration-700 ease-in-out h-[70vh] md:h-[80vh]">
-                            <div class="slider-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2">
-                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full">
+                            <div class="slider-item flex-shrink-0 w-full p-2 flex justify-center">
+                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full max-w-[420px] w-full mx-auto">
                                     <div class="h-full relative">
                                         <video
                                             src="media/videos/CakePainting_Guests at the table_5.mp4"
@@ -141,8 +141,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                             </div>
 
-                            <div class="slider-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2">
-                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full">
+                            <div class="slider-item flex-shrink-0 w-full p-2 flex justify-center">
+                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full max-w-[420px] w-full mx-auto">
                                     <div class="h-full relative">
                                         <video
                                             src="media/videos/HighTea_PhotoBoothBackdrop_TwoSmilingWomen.mp4"
@@ -174,8 +174,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                             </div>
 
-                            <div class="slider-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2">
-                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full">
+                            <div class="slider-item flex-shrink-0 w-full p-2 flex justify-center">
+                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full max-w-[420px] w-full mx-auto">
                                     <div class="h-full relative">
                                         <video
                                             src="media/videos/HighTea_TieredFoodStand_PanThroughTable.mp4"
@@ -207,8 +207,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                             </div>
 
-                            <div class="slider-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2">
-                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full">
+                            <div class="slider-item flex-shrink-0 w-full p-2 flex justify-center">
+                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full max-w-[420px] w-full mx-auto">
                                     <div class="h-full relative">
                                         <video
                                             src="media/videos/HighTea_OdetteTalkingToGuests.mp4"
@@ -240,8 +240,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                 </div>
                             </div>
 
-                            <div class="slider-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2">
-                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full">
+                            <div class="slider-item flex-shrink-0 w-full p-2 flex justify-center">
+                                <div class="relative rounded-xl overflow-hidden bg-charcoal group h-full max-w-[420px] w-full mx-auto">
                                     <div class="h-full relative">
                                         <video
                                             src="media/videos/High Tea_ Talking Guests.mp4"
@@ -290,6 +290,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
                             <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
                             <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                            <button class="slider-dot" data-slide="3" aria-label="Slide 4"></button>
+                            <button class="slider-dot" data-slide="4" aria-label="Slide 5"></button>
                         </div>
 
                         <button
@@ -312,7 +314,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="text-center mb-16">
                     <p class="section-label fade-in">Heritage & Heart</p>
                     <h2 class="fade-in delay-1 font-serif text-3xl md:text-5xl font-medium tracking-tight leading-tight text-charcoal">
-                        Filipino Inspired High Tea
+                        Filipino Inspired High Tea (Sample Menu)
                     </h2>
                     <p class="fade-in delay-2 text-stone mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
                         A celebration of Filipino flavors reimagined through the elegance of high tea service. Bold, comforting, and beautifully
@@ -485,7 +487,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="text-center mb-16">
                     <p class="section-label fade-in">Timeless Elegance</p>
                     <h2 class="fade-in delay-1 font-serif text-3xl md:text-5xl font-medium tracking-tight leading-tight text-charcoal">
-                        Classic High Tea
+                        Classic High Tea (Sample Menu)
                     </h2>
                     <p class="fade-in delay-2 text-stone mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
                         The tradition of afternoon tea, elevated. Delicate sandwiches, housemade scones, and refined sweets served with curated teas
@@ -957,9 +959,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             let maxIndex: number = Math.max(0, totalItems - itemsPerView);
 
             function getItemsPerView(): number {
-                if (window.innerWidth >= 1024) return 3;
-                if (window.innerWidth >= 768) return 2;
-                return 1;
+                return 1; // Always show one video at a time
             }
 
             function updateSlider(): void {
