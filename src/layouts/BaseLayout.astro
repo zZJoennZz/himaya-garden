@@ -85,8 +85,7 @@ const {
                     </path>
                 </svg>
             </a>
-
-            <button id="scrollToTop" class="floating-btn floating-scroll-up hidden" aria-label="Scroll to top" title="Back to Top">
+            <button id="scrollToTop" class="floating-btn floating-scroll-up hidden mb-14" aria-label="Scroll to top" title="Back to Top">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
                 </svg>
@@ -194,6 +193,21 @@ const {
             scrollToTopBtn?.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+        </script>
+        <script src="/scripts/fluvio-universal-widget-v2.js"
+            data-webhook="https://hook.us2.make.com/8inld3fbsnclj96ucur12awsbyjmsxb5"
+            data-project-id="RMW4DDW"
+            data-mode="voice"
+            data-default-mode="voice"
+            data-color="#FF4800"
+            data-position="bottom-right"
+            data-title="AI Assistant"
+            data-subtitle="Voice & Chat Support"
+            data-fab-text="Talk to AI"
+            data-fab-style="pill"
+            data-agent-name="Maria"
+            data-company-name="Himaya Garden"
+            data-greeting="Hi! I'm {{AI_agent}}, your AI assistant. How can I help you today?">
         </script>
     </body>
 </html>
