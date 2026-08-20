@@ -1,0 +1,285 @@
+---
+// src/components/GoogleReviews.astro
+
+interface Review {
+  author: string;
+  rating: number; // 1-5
+  text: string;
+  date: string;
+  avatar?: string; // optional
+}
+
+const reviews: Review[] = [
+  {
+    author: "Samantha S",
+    rating: 5,
+    text: "I don't even know where to begin with this review for Himaya.  We just had our wedding here last weekend and Olivia, Odette, Milana and the team here at Himaya Gardens went SOO above and beyond our expectations.  You can truly tell that the team here puts so much love and care into their business.  I wish everyone in town would take the time to experience the space they've created.  They are so incredibly welcoming and they make you feel like family throughout the entire planning process.  The garden is beautiful and lush and somehow creates desert and garden vibes all at the same time.  The food and desserts were absolutely delicious! We heard so many great things about the food.  We cannot thank them enough for helping us host such a beautiful intimate wedding with our families.",
+    date: "4 months ago"
+  },
+  {
+    author: "Riley A.",
+    rating: 5,
+    text: "Tried the Himaya Garden Filipino-inspired high tea for Mother's Day and really enjoyed it. The setting was beautiful and felt calm and inviting. The menu had a nice balance of sweet and savory, with Filipino flavors woven in a thoughtful way. The ube pan de sal and pan de coco stood out, and the savory bites were fantastic (especially the chicken lumpia). Service was warm and attentive, and the whole experience felt well put together. It was a memorable and unique way to celebrate Mother's Day.",
+    date: "3 month ago"
+  },
+  {
+    author: "Briquel S",
+    rating: 5,
+    text: "This was an amazing high tea experience Filipino style! The Filipino cuisine was AMAZING! The deserts and main courses made in house are some of the best I have ever eaten. The tea was so delicious!! The service was great. Even my 9 year old loved everything! I will be coming back for sure! I loved the high tea experience, and so did my mother in law and my daughters. Very unique and amazing! If they offered food to go I would probably be buying the chicken adobo weekly with their tea!",
+    date: "A year ago"
+  },
+  {
+    author: "Stephanie H",
+    rating: 5,
+    text: "What a neat place! Went to an 80th Bday party here. They had amazing tea and bites. The preparers and servers were awesome! Cute inside room and a really neat outdoor space. I think you need to rent the space for a tea. Don't think it is a walk in place. Really great, though!",
+    date: "2 months ago"
+  },
+  {
+    author: "Emily B",
+    rating: 5,
+    text: "We went to their Filipino Inspired Tea Party and 10/10 could not recommend it more! The tea and food were so delicious and we left feeling so full! The tea area is a super cute set up and they had a great selection of teas and treats to eat. If you're thinking about going to one of their tea events I would make sure you get your ticket before they sell out!",
+    date: "A year ago"
+  },
+  {
+    author: "Margi G",
+    rating: 5,
+    text: "What a wonderful place for a tea and food experience.   The service is exceptional.   This family owned business has pride in their heritage and displays it through their food presentation.   They use home grown ingredients to ensure high quality.   Their bakers delivered delicious little cakes. The chef and owner created dish sampling showcasing a wide variety of dishes.  I highly recommend Himaya Garden when in Tucson.",
+    date: "6 months ago"
+  }
+];
+
+// Helper: render star ratings
+const renderStars = (rating: number) => {
+  return "★".repeat(rating) + "☆".repeat(5 - rating);
+};
+---
+
+<div class="google-reviews">
+  <div class="reviews-header">
+    <div class="google-badge">
+      <svg class="google-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>
+      <span class="google-text">Google Reviews</span>
+      <span class="rating-badge">★ 4.9</span>
+    </div>
+    <a 
+      href="https://g.page/r/CUcNsiRnxuVJEBM/review" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="write-review-btn"
+    >
+      Write a Review
+    </a>
+  </div>
+
+  <div class="reviews-masonry">
+    {reviews.map((review) => (
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-info">
+            <div class="avatar">
+              {review.avatar ? (
+                <img src={review.avatar} alt={review.author} />
+              ) : (
+                <span>{review.author.charAt(0)}</span>
+              )}
+            </div>
+            <div>
+              <strong class="reviewer-name">{review.author}</strong>
+              <div class="stars">{renderStars(review.rating)}</div>
+            </div>
+          </div>
+          <span class="review-date">{review.date}</span>
+        </div>
+        <p class="review-text">"{review.text}"</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .google-reviews {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e8e0d8;
+  }
+
+  .google-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .google-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .google-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .rating-badge {
+    background: #34a853;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .write-review-btn {
+    background: #1a73e8;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .write-review-btn:hover {
+    background: #1557b0;
+  }
+
+  /* ✅ MASONRY LAYOUT - CSS Columns Method */
+  .reviews-masonry {
+    column-count: 3;
+    column-gap: 1.5rem;
+    width: 100%;
+  }
+
+  .review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0ebe6;
+    transition: transform 0.2s, box-shadow 0.2s;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #d4c9b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #4a3f35;
+    flex-shrink: 0;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .reviewer-name {
+    font-size: 0.95rem;
+    color: #2c241a;
+    display: block;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .stars {
+    color: #fbbc04;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .review-date {
+    font-size: 0.75rem;
+    color: #8a7a6a;
+    font-family: system-ui, -apple-system, sans-serif;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .review-text {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #3d352b;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* Responsive columns */
+  @media (max-width: 1024px) {
+    .reviews-masonry {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .reviews-masonry {
+      column-count: 1;
+    }
+    
+    .reviews-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+    
+    .write-review-btn {
+      text-align: center;
+    }
+    
+    .review-card {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

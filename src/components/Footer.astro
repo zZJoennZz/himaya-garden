@@ -6,6 +6,16 @@ const exploreLinks = [
     { href: '/contact', label: 'Book a Tour' },
 ];
 
+const legalLinks = [
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/terms-of-use', label: 'Terms of Use' },
+    { href: '/ccpa-privacy-policy', label: 'CCPA Privacy Policy' },
+    { href: '/gdpr-privacy-policy', label: 'GDPR Privacy Policy' },
+    { href: '/lgpd-privacy-policy', label: 'LGPD Privacy Policy' },
+    { href: '/pipeda-privacy-policy', label: 'PIPEDA Privacy Policy' },
+    { href: '/appi-privacy-policy', label: 'APPI Privacy Policy' },
+];
+
 const socials = [
     { href: '#', label: 'Instagram' },
     { href: '#', label: 'Facebook' },
@@ -81,6 +91,7 @@ const socials = [
         color: rgba(247, 243, 238, 0.6);
         font-size: 0.875rem;
         transition: color 0.4s ease;
+        text-decoration: none;
     }
 
     .footer-col a:hover {
@@ -140,9 +151,80 @@ const socials = [
         color: rgba(247, 243, 238, 0.4);
         font-size: 0.875rem;
         transition: color 0.4s ease;
+        text-decoration: none;
     }
 
     .footer-socials a:hover {
+        color: var(--color-sage);
+    }
+
+    /* Legal section */
+    .legal-section {
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(247, 243, 238, 0.1);
+    }
+
+    .legal-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        color: var(--color-cream);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        background: none;
+        border: none;
+        padding: 0;
+        transition: color 0.4s ease;
+    }
+
+    .legal-toggle:hover {
+        color: var(--color-sage);
+    }
+
+    .legal-toggle .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 0.75rem;
+    }
+
+    .legal-toggle .arrow.open {
+        transform: rotate(180deg);
+    }
+
+    .legal-links-wrapper {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease;
+    }
+
+    .legal-links-wrapper.open {
+        max-height: 500px;
+    }
+
+    .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        padding-top: 0.75rem;
+        list-style: none;
+    }
+
+    .legal-links li {
+        list-style: none;
+    }
+
+    .legal-links a {
+        color: rgba(247, 243, 238, 0.5);
+        font-size: 0.8rem;
+        transition: color 0.4s ease;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .legal-links a:hover {
         color: var(--color-sage);
     }
 </style>
@@ -170,14 +252,34 @@ const socials = [
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Visit</h4>
+                <h4>Connect with us!</h4>
                 <address>
-                    <span>Tucson, Arizona</span>
-                    <a href="mailto:hello@himayagarden.com">hello@himayagarden.com</a>
-                    <a href="tel:+15201234567" class="footer-phone">(520) 123-4567</a>
+                    <span>427 East Limberlost Drive, Tucson, Arizona</span>
+                    <a href="mailto:info@himayagarden.com">info@himayagarden.com</a>
+                    <a href="tel:+15204671033" class="footer-phone">(520) 467-1033</a>
                 </address>
             </div>
         </div>
+
+        <!-- Legal Section -->
+        <div class="legal-section">
+            <button class="legal-toggle" id="legalToggle" aria-expanded="false">
+                Legal
+                <span class="arrow" id="legalArrow">▾</span>
+            </button>
+            <div class="legal-links-wrapper" id="legalWrapper">
+                <ul class="legal-links">
+                    {
+                        legalLinks.map((link) => (
+                            <li>
+                                <a href={link.href}>{link.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+
         <div class="footer-bottom">
             <p>&copy; 2026 Himaya Garden. All rights reserved.</p>
             <div class="footer-socials">
@@ -186,3 +288,18 @@ const socials = [
         </div>
     </div>
 </footer>
+
+<script>
+    // Legal toggle functionality
+    const legalToggle = document.getElementById('legalToggle');
+    const legalWrapper = document.getElementById('legalWrapper');
+    const legalArrow = document.getElementById('legalArrow');
+
+    if (legalToggle && legalWrapper && legalArrow) {
+        legalToggle.addEventListener('click', () => {
+            const isOpen: any = legalWrapper.classList.toggle('open');
+            legalToggle.setAttribute('aria-expanded', isOpen);
+            legalArrow.classList.toggle('open', isOpen);
+        });
+    }
+</script>

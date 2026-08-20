@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 ---
 
 <style>
@@ -9,61 +10,106 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 <BaseLayout title="Himaya Garden — A Desert Sanctuary for Meaningful Gatherings">
     <main>
-        <!-- Hero -->
+        <!-- Hero Slideshow -->
         <section class="relative min-h-screen flex flex-col justify-between overflow-hidden pt-34 md:pt-40 pb-24 md:pb-32">
+            <!-- Slides -->
             <div class="absolute inset-0 z-0">
-                <img src="media/img/hero-image.webp" alt="Himaya Garden wedding ceremony" class="w-full h-full object-cover" />
-            </div>
-            <div class="absolute inset-0 z-[1] bg-charcoal/30"></div>
-            <div class="absolute inset-0 z-[2] bg-gradient-to-b from-transparent via-transparent to-cream/40"></div>
-
-            <!-- Top: Headline -->
-            <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
-                <h1 class="pt-20 fade-in delay-1 text-2xl md:text-3xl tracking-[0.3em] uppercase text-white/90 font-light">
-                    For Your Joyful Gatherings and Events
-                </h1>
-            </div>
-
-            <!-- Bottom: Buttons -->
-            <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
-                <div class="fade-in delay-4 flex flex-wrap gap-4 justify-center">
-                    <a
-                        href="/contact"
-                        class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-white px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-sage hover:text-white hover:border-sage active:scale-95 cursor-pointer"
-                    >
-                        Book a Private Tour
-                    </a>
-                    <a
-                        href="tel:+15201234567"
-                        class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-transparent px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal active:scale-95 cursor-pointer"
-                    >
-                        Give us a call
-                    </a>
+                <!-- Slide 1 -->
+                <div class="hero-slide active" data-slide="0">
+                    <img src="media/img/hero-image.webp" alt="Himaya Garden wedding ceremony" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-charcoal/30"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/40"></div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide" data-slide="1">
+                    <img src="media/img/aug-high-tea-banner.jpg" alt="Himaya Garden sunset" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-charcoal/30"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/40"></div>
                 </div>
             </div>
 
+            <!-- Top: Headline -->
+            <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
+                <!-- Slide 1 Content -->
+                <div class="hero-content" data-slide="0">
+                    <h1 class="pt-10 md:pt-20 fade-in delay-1 text-2xl md:text-3xl tracking-[0.3em] uppercase text-white/90 font-light">
+                        For Your Joyful Gatherings and Events
+                    </h1>
+                </div>
+
+                <!-- Slide 2 Content -->
+                <div class="hero-content hidden" data-slide="1">
+                    <h1 class="pt-10 md:pt-20 fade-in delay-1 text-2xl md:text-3xl tracking-[0.3em] uppercase text-white/90 font-light">
+                        Morning High Tea Returns
+                    </h1>
+                    <p class="fade-in delay-2 text-white/80 font-light text-base md:text-lg max-w-2xl mx-auto mt-3 md:mt-4">
+                        <span class="font-bold">[Sold Out]</span> Join us on Sunday, August 30, from 9:00 AM to 11:00 AM for an elegant High Tea experience in the Himaya Garden Tea House, featuring premium teas, handcrafted bites, and meaningful moments to savor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom: Buttons (per slide) -->
+            <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
+                <!-- Slide 1 Buttons -->
+                <div class="hero-buttons" data-slide="0">
+                    <div class="fade-in delay-4 flex flex-wrap gap-4 justify-center">
+                        <a
+                            href="/contact"
+                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-white px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-sage hover:text-white hover:border-sage active:scale-95 cursor-pointer"
+                        >
+                            Book a Private Tour
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 Buttons -->
+                <div class="hero-buttons hidden" data-slide="1">
+                    <div class="fade-in delay-4 flex flex-wrap gap-4 justify-center">
+                        <a
+                            href="/contact"
+                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-white px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-sage hover:text-white hover:border-sage active:scale-95 cursor-pointer"
+                        >
+                            Join Waitlist
+                        </a>
+                        <a
+                            href="/private-events"
+                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-transparent px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal active:scale-95 cursor-pointer"
+                        >
+                            View All Events
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide Indicators -->
+            <div class="absolute bottom-20 left-1/2 z-[3] -translate-x-1/2 flex gap-3">
+                <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+            </div>
+
+            <!-- Scroll indicator -->
             <div class="absolute bottom-10 left-1/2 z-[3] -translate-x-1/2 animate-bounce-slow">
                 <div class="w-px h-12 bg-white/40"></div>
             </div>
         </section>
 
-        <!-- Email Capture -->
-        <section class="bg-sage py-5">
-            <div class="max-w-7xl mx-auto md:flex-row text-center md:text-left px-6 md:px-12 lg:px-20 xl:px-32">
-                <p class="text-white text-[0.9375rem] text-center font-light mt-5">
-                    Join the Himaya Garden Newsletter to learn more about our upcoming events, retreats,
-                    and workshops
+        <!-- Email Capture - Updated to Button -->
+        <section class="bg-sage py-8 md:py-10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 text-center">
+                <p class="text-white text-[0.9375rem] font-light mb-6">
+                    Join the Himaya Garden Newsletter to learn more about our upcoming events, retreats, and workshops
                 </p>
-                <div id="fd-form-6a51273b73a927e64254c0a0" style="margin-top: -3rem;"></div>
-                <script>
-                (window as any).fd?.('form', {
-                    formId: '6a51273b73a927e64254c0a0',
-                    containerEl: '#fd-form-6a51273b73a927e64254c0a0'
-                });
-                </script>
+                <a
+                    href="https://himaya-garden-tucson.myflodesk.com/axy6okxvjb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center rounded-sm border border-white bg-white px-8 py-3 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-transparent hover:text-white hover:border-white active:scale-95 cursor-pointer"
+                >
+                    Subscribe Now
+                </a>
             </div>
         </section>
-
+        
         <!-- Marquee -->
         <div class="bg-cream-warm py-5 overflow-hidden whitespace-nowrap border-y border-sage/10">
             <div class="inline-flex animate-marquee">
@@ -131,7 +177,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <!-- Intro -->
-        <section class="py-24 md:py-32 bg-cream">
+        <!-- <section class="py-24 md:py-32 bg-cream">
             <div class="max-w-7xl mx-auto text-center px-6 md:px-12 lg:px-20 xl:px-32">
                 <p class="section-label fade-in">Himaya Garden is a sanctuary</p>
                 <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-charcoal">
@@ -142,15 +188,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     guests will lovingly remember long after they leave.
                 </p>
             </div>
+        </section> -->
+        <!-- Intro + Venue Snapshot -->
+        <section class="py-24 md:py-32 bg-cream">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+                <!-- Intro Text -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <p class="section-label fade-in">Himaya Garden is a sanctuary</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-charcoal">
+                        For Celebrations, Connection,<br />and Belonging
+                    </h2>
+                    <p class="fade-in delay-2 text-lg text-stone leading-relaxed">
+                        Whether you're planning a wedding, retreat, private celebration, or immersive workshop, Himaya Garden offers an experience your
+                        guests will lovingly remember long after they leave.
+                    </p>
+                </div>
+
+                <!-- Venue Snapshot -->
+                <div class="fade-in delay-3 bg-warm-white rounded-sm p-8 md:p-10 border border-sage/10 shadow-sm">
+                    <p class="text-center text-xs tracking-[0.2em] uppercase text-sage font-medium mb-6">Venue Snapshot</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">📍</div>
+                            <p class="text-sm font-medium text-charcoal">Midtown Tucson</p>
+                            <p class="text-xs text-stone mt-0.5">427 E Limberlost Dr</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">👥</div>
+                            <p class="text-sm font-medium text-charcoal">Up to 200 Guests</p>
+                            <p class="text-xs text-stone mt-0.5">Indoor + garden capacity</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🌿</div>
+                            <p class="text-sm font-medium text-charcoal">Indoor + Garden Spaces</p>
+                            <p class="text-xs text-stone mt-0.5">Layered outdoor venues</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🅿️</div>
+                            <p class="text-sm font-medium text-charcoal">On-Site Parking</p>
+                            <p class="text-xs text-stone mt-0.5">Complimentary for guests</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🍽️</div>
+                            <p class="text-sm font-medium text-charcoal">In-House Catering</p>
+                            <p class="text-xs text-stone mt-0.5">Heritage-inspired menus</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🗓️</div>
+                            <p class="text-sm font-medium text-charcoal">Private Tours</p>
+                            <p class="text-xs text-stone mt-0.5">By appointment only</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Stats -->
-        <section class="py-16 bg-warm-white">
+        <section class="py-16 bg-warm-white border-y border-sage/10">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div class="fade-in">
                         <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">25+</div>
-                        <div class="text-sm text-stone font-light tracking-wide">Years of Hospitality Experience</div>
+                        <div class="text-sm text-stone font-light tracking-wide">Years of Hospitality</div>
                     </div>
                     <div class="fade-in delay-1">
                         <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">500+</div>
@@ -316,18 +415,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                                     <span class="text-sage text-xl leading-none">◈</span> Perfect for bridal showers, birthdays, retirements, or corporate
                                     meetings
                                 </li>
-                                <!-- <li class="flex items-start gap-3 py-3 text-stone text-[0.9375rem] font-light border-b border-charcoal/5">
-                                    <span class="text-sage text-xl leading-none">◈</span> Public High Teas are held monthly, signup for <a
-                                        href="#"
-                                        class="underline hover:text-sage transition-colors"
-                                    >
-                                        Himaya Garden Newsletter for an exclusive invitation
-                                    </a>
-                                </li> -->
                             </ul>
                         </div>
                         <div class="fade-in delay-3 flex flex-wrap gap-4 items-center">
-                            <!-- <a href="/contact" class="btn-primary">Reserve High Tea</a> -->
                             <a href="/private-events" class="btn-secondary">View Events</a>
                         </div>
                     </div>
@@ -470,6 +560,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
         </section>
 
+        <!-- Video Section - Immersion -->
+        <section class="py-24 md:py-32 bg-warm-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+                <div class="text-center mb-12 max-w-3xl mx-auto">
+                    <p class="section-label fade-in">Experience the Garden</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
+                        What Does It Feel Like to Be Here?
+                    </h2>
+                    <p class="fade-in delay-2 text-stone mt-4 text-lg">
+                        Let the garden show you. Watch the light shift, hear the rustle of leaves, and feel the calm of this desert sanctuary.
+                    </p>
+                </div>
+                <div class="fade-in delay-3 relative aspect-video rounded-sm overflow-hidden bg-charcoal/5 group max-w-4xl mx-auto">
+                    <!-- Video -->
+                    <video 
+                        id="heroVideo"
+                        src="/media/videos/7be962ce53c449029231c0c026123bf8.HD-720p-4.5Mbps-74244527.mp4" 
+                        poster="/media/img/hero-image.webp"
+                        muted 
+                        loop 
+                        playsinline 
+                        class="w-full h-full object-cover"
+                    ></video>
+                    
+                    <!-- Overlay with Play Button -->
+                    <div id="videoOverlay" class="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/30 transition-all duration-500 flex items-center justify-center cursor-pointer">
+                        <!-- Play button -->
+                        <div id="playButton" class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                            <svg class="w-8 h-8 md:w-10 md:h-10 text-charcoal ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <polygon points="5,3 19,12 5,21" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Label -->
+                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-charcoal/70 backdrop-blur-sm text-white text-xs tracking-[0.2em] uppercase px-5 py-2.5 rounded-full font-medium pointer-events-none">
+                        ▶ Watch the Garden Come Alive
+                    </div>
+                    <!-- Subtle gradient bottom -->
+                    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-charcoal/10 to-transparent pointer-events-none"></div>
+                </div>
+                <div class="text-center mt-8 fade-in delay-4">
+                    <p class="text-sm text-stone font-light">Experience the garden in motion — or <a href="/contact" class="text-sage hover:underline">schedule a tour</a> to see it in person</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Gallery Preview -->
         <section class="py-24 md:py-32 bg-warm-white">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
@@ -593,65 +730,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         You Are Creating Meaning
                     </h2>
                 </div>
-                <div class="relative min-h-[280px] md:min-h-[240px]" id="testimonialCarousel">
-                    <div class="testimonial-slide active">
-                        <div class="font-serif text-6xl leading-none text-sage/40 mb-4">"</div>
-                        <p class="font-serif text-2xl md:text-3xl font-light leading-relaxed text-charcoal mb-8 italic">
-                            It feels intimate yet elevated. Like a hidden sanctuary in the desert that somehow feels like home.
-                        </p>
-                        <footer>
-                            <strong class="font-serif text-xl font-medium text-charcoal block">Sarah & Marcus</strong>
-                            <span class="text-sm text-stone mt-1 block">Wedding, October 2025</span>
-                        </footer>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="font-serif text-6xl leading-none text-sage/40 mb-4">"</div>
-                        <p class="font-serif text-2xl md:text-3xl font-light leading-relaxed text-charcoal mb-8 italic">
-                            The food carried so much memory and meaning. Our guests are still talking about the Cebuano-inspired dishes months later.
-                        </p>
-                        <footer>
-                            <strong class="font-serif text-xl font-medium text-charcoal block">The Reyes Family</strong>
-                            <span class="text-sm text-stone mt-1 block">Anniversary Celebration</span>
-                        </footer>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="font-serif text-6xl leading-none text-sage/40 mb-4">"</div>
-                        <p class="font-serif text-2xl md:text-3xl font-light leading-relaxed text-charcoal mb-8 italic">
-                            We didn't need to over-decorate. The sunset, the garden, the golden light — it was already perfect.
-                        </p>
-                        <footer>
-                            <strong class="font-serif text-xl font-medium text-charcoal block">Amara K.</strong>
-                            <span class="text-sm text-stone mt-1 block">Wellness Retreat</span>
-                        </footer>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="font-serif text-6xl leading-none text-sage/40 mb-4">"</div>
-                        <p class="font-serif text-2xl md:text-3xl font-light leading-relaxed text-charcoal mb-8 italic">
-                            The garden itself was the decor. We saved thousands and gained something priceless.
-                        </p>
-                        <footer>
-                            <strong class="font-serif text-xl font-medium text-charcoal block">Jennifer & David</strong>
-                            <span class="text-sm text-stone mt-1 block">Elopement, March 2025</span>
-                        </footer>
-                    </div>
-                    <div class="testimonial-slide">
-                        <div class="font-serif text-6xl leading-none text-sage/40 mb-4">"</div>
-                        <p class="font-serif text-2xl md:text-3xl font-light leading-relaxed text-charcoal mb-8 italic">
-                            Milana and Odette treated our family like their own. The Cebuano dishes had our relatives in tears.
-                        </p>
-                        <footer>
-                            <strong class="font-serif text-xl font-medium text-charcoal block">The Santos Family</strong>
-                            <span class="text-sm text-stone mt-1 block">Reunion, December 2025</span>
-                        </footer>
-                    </div>
-                </div>
-                <div class="flex gap-3 justify-center mt-8" id="testimonialDots">
-                    <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
-                    <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
-                    <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
-                    <button class="testimonial-dot" data-index="3" aria-label="Testimonial 4"></button>
-                    <button class="testimonial-dot" data-index="4" aria-label="Testimonial 5"></button>
-                </div>
+                <GoogleReviews />
             </div>
         </section>
 
@@ -677,125 +756,410 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </main>
 
     <script>
-        // Testimonial carousel
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const dots = document.querySelectorAll('.testimonial-dot');
-        let currentSlide = 0;
-        let slideInterval: number | undefined;
+    // Hero Slideshow
+    const heroSlides = document.querySelectorAll<HTMLElement>('.hero-slide');
+    const heroContents = document.querySelectorAll<HTMLElement>('.hero-content');
+    const heroButtons = document.querySelectorAll<HTMLElement>('.hero-buttons');
+    const heroDots = document.querySelectorAll<HTMLButtonElement>('.hero-dot');
+    let currentHeroSlide: number = 0;
+    let heroInterval: number | undefined;
 
-        function showSlide(index: number) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            showSlide((currentSlide + 1) % slides.length);
-        }
-
-        function startCarousel() {
-            slideInterval = setInterval(nextSlide, 6000);
-        }
-
-        dots.forEach((dot: any) => {
-            dot.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                showSlide(parseInt(dot.dataset.index));
-                startCarousel();
-            });
+    function showHeroSlide(index: number): void {
+        // Update slides
+        heroSlides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
         });
-
-        startCarousel();
-    </script>
-
-    <style>
-        .testimonial-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0 1rem;
-        }
-        .testimonial-slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-        .testimonial-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: var(--color-sage);
-            opacity: 0.3;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border: none;
-            padding: 0;
-        }
-        .testimonial-dot.active {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
+        
+        // Update content (h1 + paragraph)
+        heroContents.forEach((content, i) => {
+            content.classList.toggle('hidden', i !== index);
+            if (i === index) {
+                // Re-trigger fade animation for all child elements
+                const fadeElements = content.querySelectorAll('.fade-in');
+                fadeElements.forEach((el) => {
+                    el.classList.remove('fade-in');
+                    void (el as HTMLElement).offsetWidth;
+                    el.classList.add('fade-in');
+                });
             }
-            100% {
-                transform: translateX(-50%);
+        });
+        
+        // Update buttons
+        heroButtons.forEach((buttons, i) => {
+            buttons.classList.toggle('hidden', i !== index);
+            if (i === index) {
+                // Re-trigger fade animation for all child elements
+                const fadeElements = buttons.querySelectorAll('.fade-in');
+                fadeElements.forEach((el) => {
+                    el.classList.remove('fade-in');
+                    void (el as HTMLElement).offsetWidth;
+                    el.classList.add('fade-in');
+                });
             }
-        }
-        .animate-marquee {
-            animation: marquee 40s linear infinite;
-        }
+        });
+        
+        // Update dots
+        heroDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        
+        currentHeroSlide = index;
+    }
 
-        @keyframes bounce-slow {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-        }
-        .animate-bounce-slow {
-            animation: bounce-slow 2s infinite;
-        }
+    function nextHeroSlide(): void {
+        showHeroSlide((currentHeroSlide + 1) % heroSlides.length);
+    }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition:
-                opacity 1.2s ease-out,
-                transform 1.2s ease-out;
+    function startHeroCarousel(): void {
+        if (heroInterval !== undefined) {
+            clearInterval(heroInterval);
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        heroInterval = window.setInterval(nextHeroSlide, 5000);
+    }
+
+    // Dot click handlers
+    heroDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            if (heroInterval !== undefined) {
+                clearInterval(heroInterval);
+            }
+            const slideIndex = parseInt(dot.dataset.slide || '0', 10);
+            showHeroSlide(slideIndex);
+            startHeroCarousel();
+        });
+    });
+
+    // Start the carousel
+    startHeroCarousel();
+
+    // Testimonial carousel
+    const testimonialSlides = document.querySelectorAll<HTMLElement>('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll<HTMLButtonElement>('.testimonial-dot');
+    let currentTestimonialSlide: number = 0;
+    let testimonialInterval: number | undefined;
+
+    function showTestimonialSlide(index: number): void {
+        testimonialSlides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        testimonialDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+        currentTestimonialSlide = index;
+    }
+
+    function nextTestimonialSlide(): void {
+        showTestimonialSlide((currentTestimonialSlide + 1) % testimonialSlides.length);
+    }
+
+    function startTestimonialCarousel(): void {
+        if (testimonialInterval !== undefined) {
+            clearInterval(testimonialInterval);
         }
-        .delay-1 {
-            transition-delay: 0.2s;
+        testimonialInterval = window.setInterval(nextTestimonialSlide, 6000);
+    }
+
+    testimonialDots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            if (testimonialInterval !== undefined) {
+                clearInterval(testimonialInterval);
+            }
+            const slideIndex = parseInt(dot.dataset.index || '0', 10);
+            showTestimonialSlide(slideIndex);
+            startTestimonialCarousel();
+        });
+    });
+
+    // Start the testimonial carousel
+    startTestimonialCarousel();
+</script>
+<script>
+    // ============================================
+// HERO SLIDESHOW
+// ============================================
+const heroSlides = document.querySelectorAll<HTMLElement>('.hero-slide');
+const heroContents = document.querySelectorAll<HTMLElement>('.hero-content');
+const heroButtons = document.querySelectorAll<HTMLElement>('.hero-buttons');
+const heroDots = document.querySelectorAll<HTMLButtonElement>('.hero-dot');
+let currentHeroSlide: number = 0;
+let heroInterval: number | undefined;
+
+function showHeroSlide(index: number): void {
+    // Update slides
+    heroSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    
+    // Update content (h1 + paragraph)
+    heroContents.forEach((content, i) => {
+        content.classList.toggle('hidden', i !== index);
+        if (i === index) {
+            const fadeElements = content.querySelectorAll('.fade-in');
+            fadeElements.forEach((el) => {
+                el.classList.remove('fade-in');
+                void (el as HTMLElement).offsetWidth;
+                el.classList.add('fade-in');
+            });
         }
-        .delay-2 {
-            transition-delay: 0.4s;
+    });
+    
+    // Update buttons
+    heroButtons.forEach((buttons, i) => {
+        buttons.classList.toggle('hidden', i !== index);
+        if (i === index) {
+            const fadeElements = buttons.querySelectorAll('.fade-in');
+            fadeElements.forEach((el) => {
+                el.classList.remove('fade-in');
+                void (el as HTMLElement).offsetWidth;
+                el.classList.add('fade-in');
+            });
         }
-        .delay-3 {
-            transition-delay: 0.6s;
+    });
+    
+    // Update dots
+    heroDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    
+    currentHeroSlide = index;
+}
+
+function nextHeroSlide(): void {
+    showHeroSlide((currentHeroSlide + 1) % heroSlides.length);
+}
+
+function startHeroCarousel(): void {
+    if (heroInterval !== undefined) {
+        clearInterval(heroInterval);
+    }
+    heroInterval = window.setInterval(nextHeroSlide, 5000);
+}
+
+// Dot click handlers
+heroDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+        if (heroInterval !== undefined) {
+            clearInterval(heroInterval);
         }
-        .delay-4 {
-            transition-delay: 0.8s;
+        const slideIndex = parseInt(dot.dataset.slide || '0', 10);
+        showHeroSlide(slideIndex);
+        startHeroCarousel();
+    });
+});
+
+// Start the carousel
+startHeroCarousel();
+
+// ============================================
+// TESTIMONIAL CAROUSEL
+// ============================================
+const testimonialSlides = document.querySelectorAll<HTMLElement>('.testimonial-slide');
+const testimonialDots = document.querySelectorAll<HTMLButtonElement>('.testimonial-dot');
+let currentTestimonialSlide: number = 0;
+let testimonialInterval: number | undefined;
+
+function showTestimonialSlide(index: number): void {
+    testimonialSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    testimonialDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    currentTestimonialSlide = index;
+}
+
+function nextTestimonialSlide(): void {
+    showTestimonialSlide((currentTestimonialSlide + 1) % testimonialSlides.length);
+}
+
+function startTestimonialCarousel(): void {
+    if (testimonialInterval !== undefined) {
+        clearInterval(testimonialInterval);
+    }
+    testimonialInterval = window.setInterval(nextTestimonialSlide, 6000);
+}
+
+testimonialDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+        if (testimonialInterval !== undefined) {
+            clearInterval(testimonialInterval);
         }
-        .delay-5 {
-            transition-delay: 1s;
+        const slideIndex = parseInt(dot.dataset.index || '0', 10);
+        showTestimonialSlide(slideIndex);
+        startTestimonialCarousel();
+    });
+});
+
+startTestimonialCarousel();
+
+// ============================================
+// VIDEO CONTROLS
+// ============================================
+const video = document.getElementById('heroVideo') as HTMLVideoElement | null;
+const overlay = document.getElementById('videoOverlay') as HTMLElement | null;
+const playButton = document.getElementById('playButton') as HTMLElement | null;
+
+if (video && overlay && playButton) {
+    // Click overlay to play/pause
+    overlay.addEventListener('click', () => {
+        if (video.paused) {
+            video.play().catch((error: Error) => {
+                console.warn('Video play failed:', error);
+            });
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+        } else {
+            video.pause();
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
         }
-    </style>
+    });
+
+    // Show overlay when video ends
+    video.addEventListener('ended', () => {
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+    });
+
+    // Hide overlay when video is playing
+    video.addEventListener('play', () => {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+    });
+
+    // Show overlay when video is paused
+    video.addEventListener('pause', () => {
+        if (!video.ended) {
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+        }
+    });
+}
+</script>
+
+<style>
+    /* Hero Slideshow Styles */
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .hero-slide.active {
+        opacity: 1;
+        z-index: 1;
+    }
+    .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .hero-slide .absolute {
+        pointer-events: none;
+    }
+
+    .hero-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.4s ease;
+        border: none;
+        padding: 0;
+    }
+    .hero-dot.active {
+        background-color: white;
+        transform: scale(1.2);
+    }
+
+    .testimonial-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+    .testimonial-slide.active {
+        opacity: 1;
+        z-index: 2;
+    }
+    .testimonial-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--color-sage);
+        opacity: 0.3;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        border: none;
+        padding: 0;
+    }
+    .testimonial-dot.active {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+    }
+
+    @keyframes bounce-slow {
+        0%,
+        100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 2s infinite;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+            opacity 1.2s ease-out,
+            transform 1.2s ease-out;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .delay-1 {
+        transition-delay: 0.2s;
+    }
+    .delay-2 {
+        transition-delay: 0.4s;
+    }
+    .delay-3 {
+        transition-delay: 0.6s;
+    }
+    .delay-4 {
+        transition-delay: 0.8s;
+    }
+    .delay-5 {
+        transition-delay: 1s;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
 </BaseLayout>
