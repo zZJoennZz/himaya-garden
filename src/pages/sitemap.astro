@@ -1,0 +1,72 @@
+---
+const pageModules = import.meta.glob('./**/*.astro', { eager: true });
+
+const pages = Object.keys(pageModules)
+	.filter((file) => !file.endsWith('/sitemap.astro'))
+	.filter((file) => !file.includes('/[slug].astro'))
+	.map((file) => {
+		const path = file.replace(/^\.\//, '').replace(/\.astro$/, '');
+		const segments = path.split('/');
+		const slug = segments.at(-1) === 'index' ? segments.slice(0, -1) : segments;
+		const url = slug.length ? `/${slug.join('/')}` : '/';
+		const label = (segments.at(-1) === 'index' ? segments.at(-2) ?? 'Home' : segments.at(-1) ?? 'Home')
+			.replace(/[-_]/g, ' ')
+			.replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+		return { label, path, url };
+	})
+	.filter(({ path }) => !path.startsWith('_') && !path.startsWith('api/'))
+	.sort((a, b) => a.label.localeCompare(b.label));
+
+const legalTerms = ['legal', 'privacy', 'terms', 'cookie', 'disclaimer', 'accessibility'];
+const isLegal = ({ path } : { path: string }) => legalTerms.some((term) => path.toLowerCase().includes(term));
+const regularPages = pages.filter((page) => !isLegal(page));
+const legalPages = pages.filter(isLegal);
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Site Directory | Himaya Garden</title>
+	</head>
+	<body>
+		<main>
+			<p class="eyebrow">Himaya Garden</p>
+			<h1>Site Directory</h1>
+			<p class="intro">Browse all pages on our website.</p>
+
+			<div class="columns">
+				<section aria-labelledby="regular-pages">
+					<h2 id="regular-pages">Regular pages</h2>
+					{regularPages.length > 0 ? (
+						<ul>{regularPages.map((page) => <li><a href={page.url}>{page.label}</a></li>)}</ul>
+					) : <p class="empty">No regular pages found.</p>}
+				</section>
+
+				<section aria-labelledby="legal-pages">
+					<h2 id="legal-pages">Legal pages</h2>
+					{legalPages.length > 0 ? (
+						<ul>{legalPages.map((page) => <li><a href={page.url}>{page.label}</a></li>)}</ul>
+					) : <p class="empty">No legal pages found.</p>}
+				</section>
+			</div>
+		</main>
+	</body>
+</html>
+
+<style>
+	:global(*) { box-sizing: border-box; }
+	:global(body) { margin: 0; background: #f5f7f2; color: #24352b; font-family: system-ui, sans-serif; }
+	main { max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem; }
+	.eyebrow { color: #39704a; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+	h1 { margin: .5rem 0; font-size: clamp(2.25rem, 6vw, 4rem); }
+	.intro { color: #68756b; margin-bottom: 2.5rem; }
+	.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+	section { padding: 1.5rem; border: 1px solid #dce5db; border-radius: 1rem; background: #fff; }
+	h2 { margin-top: 0; font-size: 1.25rem; }
+	ul { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+	a { color: #39704a; font-weight: 600; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	.empty { color: #7b857d; }
+</style>
