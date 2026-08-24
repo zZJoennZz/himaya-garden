@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import events from '../data/events.json';
+import EventCard from '../components/EventCard.astro';
+import EventCalendar from '../components/EventCalendar.astro';
+
+const sortedEvents = [...events].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingEvents = sortedEvents.filter(e => new Date(e.date + 'T23:59:59') >= today);
+const pastEvents = sortedEvents.filter(e => new Date(e.date + 'T23:59:59') < today);
+
+const featuredEvent = upcomingEvents.find(e => e.featured) || upcomingEvents[0];
+---
+
+<BaseLayout
+  title="Events — Himaya Garden"
+  description="Discover upcoming events at Himaya Garden. From open houses and workshops to live music and seasonal celebrations."
+>
+  <main>
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-cream">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 text-center">
+        <p class="section-label fade-in">Calendar</p>
+        <h1 class="fade-in delay-1 font-serif text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-tight text-charcoal mb-6">
+          Events at Himaya
+        </h1>
+        <p class="fade-in delay-2 text-lg text-stone leading-relaxed max-w-2xl mx-auto">
+          From intimate workshops to grand celebrations, explore what's happening in our garden.
+          Join us for an unforgettable experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Event -->
+    {featuredEvent && (
+      <section class="pb-24 bg-cream">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+          <div class="bg-white rounded-2xl shadow-sm border border-stone/10 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="relative h-72 lg:h-auto min-h-[400px]">
+                <img src={featuredEvent.image} alt={featuredEvent.title} class="w-full h-full object-cover" />
+                <div class="absolute top-6 left-6">
+                  <span class="px-4 py-2 bg-sage text-white text-sm font-medium tracking-wider uppercase rounded-full">Featured Event</span>
+                </div>
+              </div>
+              <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                <span class="text-sage text-sm tracking-[0.2em] uppercase mb-4">{featuredEvent.category}</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-charcoal leading-tight mb-6">{featuredEvent.title}</h2>
+                <div class="space-y-3 mb-8">
+                  <div class="flex items-center gap-3 text-stone">
+                    <svg class="w-5 h-5 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>{new Date(featuredEvent.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-stone">
+                    <svg class="w-5 h-5 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>{featuredEvent.time} – {featuredEvent.endTime}</span>
+                  </div>
+                  <div class="flex items-center gap-3 text-stone">
+                    <svg class="w-5 h-5 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>{featuredEvent.location}</span>
+                  </div>
+                  {featuredEvent.price && (
+                    <div class="flex items-center gap-3 text-stone">
+                      <svg class="w-5 h-5 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      <span>{featuredEvent.price}</span>
+                    </div>
+                  )}
+                </div>
+                <p class="text-stone leading-relaxed mb-8">{featuredEvent.shortDescription}</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href={`/events/${featuredEvent.slug}`} class="btn-primary">Event Details</a>
+                  <a href="/contact" class="btn-secondary">Inquire Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Calendar -->
+    <section class="py-24 bg-cream-warm">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-4">Event Calendar</h2>
+          <div class="w-20 h-0.5 bg-sage mx-auto"></div>
+        </div>
+        <EventCalendar />
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-24 bg-cream">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+        <div class="text-center mb-16">
+          <p class="section-label fade-in">Upcoming</p>
+          <h2 class="fade-in delay-1 font-serif text-3xl md:text-4xl text-charcoal mb-4">All Upcoming Events</h2>
+          <div class="w-20 h-0.5 bg-sage mx-auto"></div>
+        </div>
+
+        {upcomingEvents.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {upcomingEvents.map((event, index) => (
+              <div class="fade-in" style={`transition-delay: ${index * 0.1}s;`}>
+                <EventCard event={{ ...event, spotsAvailable: event.spotsAvailable ?? undefined, spotsTotal: event.spotsTotal ?? undefined }} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-16">
+            <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-sage/10 flex items-center justify-center text-sage">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-serif text-2xl text-charcoal mb-3">No Upcoming Events</h3>
+            <p class="text-stone max-w-md mx-auto mb-8">We're planning our next season of events. Check back soon for updates.</p>
+            <a href="/contact" class="btn-primary">Get Notified</a>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Past Events -->
+    {pastEvents.length > 0 && (
+      <section class="py-24 bg-cream-warm">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+          <div class="text-center mb-16">
+            <p class="section-label fade-in">Archive</p>
+            <h2 class="fade-in delay-1 font-serif text-3xl md:text-4xl text-charcoal mb-4">Past Events</h2>
+            <div class="w-20 h-0.5 bg-sage mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 opacity-70">
+            {pastEvents.slice(0, 4).map((event, index) => (
+              <div class="fade-in" style={`transition-delay: ${index * 0.1}s;`}>
+                <EventCard event={{ ...event, spotsAvailable: event.spotsAvailable ?? undefined, spotsTotal: event.spotsTotal ?? undefined }} />
+              </div>
+            ))}
+          </div>
+          {pastEvents.length > 4 && (
+            <div class="text-center mt-12">
+              <button id="load-more-past" class="btn-secondary">Load More Past Events</button>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <!-- CTA -->
+    <section class="py-24 bg-cream">
+      <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl text-charcoal mb-6">Want to Host Your Own Event?</h2>
+        <p class="text-stone text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          Himaya Garden is available for private events, weddings, corporate gatherings, and celebrations of all kinds.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/rental-inquiry" class="btn-primary">Submit an Inquiry</a>
+          <a href="/venue-rates" class="btn-secondary">View Venue Rates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,198 @@
+---
+import events from '../data/events.json';
+import EventCard from './EventCard.astro';
+
+// Define the event data structure
+export interface Event {
+  id: string;
+  title: string;
+  date: string;
+  time?: string;
+  location: string;
+  description: string;
+  category: string;
+  featured: boolean;
+  thumbnail?: string;
+  image?: string;
+  registrationLink?: string;
+}
+
+export interface Props {
+  limit?: number;
+  showFilter?: boolean;
+  title?: string;
+  subtitle?: string;
+  featuredOnly?: boolean;
+  upcomingOnly?: boolean;
+  layout?: 'grid' | 'list';
+}
+
+const { 
+  limit, 
+  showFilter = false, 
+  title = "Upcoming Events",
+  subtitle,
+  featuredOnly = false,
+  upcomingOnly = true,
+  layout = 'grid'
+} = Astro.props;
+
+// Type the imported events
+const typedEvents: Event[] = events as Event[];
+
+// Filter and sort events
+let filteredEvents: Event[] = [...typedEvents];
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+if (upcomingOnly) {
+  filteredEvents = filteredEvents.filter((e: Event) => {
+    const eventDate = new Date(e.date + 'T23:59:59');
+    return eventDate >= today;
+  });
+}
+
+if (featuredOnly) {
+  filteredEvents = filteredEvents.filter((e: Event) => e.featured);
+}
+
+// Sort by date
+filteredEvents.sort((a: Event, b: Event) => 
+  new Date(a.date).getTime() - new Date(b.date).getTime()
+);
+
+// Apply limit
+if (limit) {
+  filteredEvents = filteredEvents.slice(0, limit);
+}
+
+// Get unique categories for filter
+const categories: string[] = [...new Set(typedEvents.map((e: Event) => e.category))];
+
+// Check if there are past events to show
+const hasPastEvents: boolean = typedEvents.some((e: Event) => 
+  new Date(e.date + 'T23:59:59') < today
+);
+---
+
+<section class="py-24 bg-cream">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <p class="section-label fade-in">{subtitle || "What's Happening"}</p>
+      <h2 class="fade-in delay-1 font-serif text-3xl md:text-4xl lg:text-5xl text-charcoal mb-4">
+        {title}
+      </h2>
+      <div class="w-20 h-0.5 bg-sage mx-auto mb-6"></div>
+      {filteredEvents.length === 0 && (
+        <p class="text-stone text-lg">No upcoming events at this time. Check back soon!</p>
+      )}
+    </div>
+
+    <!-- Category Filter (if enabled) -->
+    {showFilter && filteredEvents.length > 0 && (
+      <div class="flex flex-wrap justify-center gap-3 mb-12" id="event-filters">
+        <button 
+          class="filter-btn active px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-sage text-white"
+          data-filter="all"
+        >
+          All Events
+        </button>
+        {categories.map((cat: string) => (
+          <button 
+            class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-stone border border-stone/20 hover:border-sage hover:text-sage"
+            data-filter={cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    )}
+
+    <!-- Events Grid -->
+    {filteredEvents.length > 0 && (
+      <div 
+        class:list={[
+          "gap-8",
+          layout === 'grid' ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col"
+        ]}
+        id="events-container"
+      >
+        {filteredEvents.map((event: Event, index: number) => (
+          <div 
+            class="event-item fade-in" 
+            data-category={event.category}
+            style={`transition-delay: ${index * 0.1}s;`}
+          >
+            <EventCard event={event as any} layout={layout === 'list' ? 'horizontal' : 'vertical'} />
+          </div>
+        ))}
+      </div>
+    )}
+
+    <!-- View All Link -->
+    {limit && filteredEvents.length > 0 && (
+      <div class="text-center mt-14">
+        <a 
+          href="/events" 
+          class="btn-secondary"
+        >
+          View All Events
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    )}
+  </div>
+</section>
+
+{showFilter && (
+  <script>
+    interface FilterButton extends HTMLElement {
+      dataset: DOMStringMap & { filter: string };
+    }
+
+    interface EventItem extends HTMLElement {
+      dataset: DOMStringMap & { category: string };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll<FilterButton>('.filter-btn');
+      const eventItems = document.querySelectorAll<EventItem>('.event-item');
+
+      filterBtns.forEach((btn: FilterButton) => {
+        btn.addEventListener('click', () => {
+          const filter: string = btn.dataset.filter;
+
+          // Update active state
+          filterBtns.forEach((b: FilterButton) => {
+            b.classList.remove('bg-sage', 'text-white');
+            b.classList.add('bg-white', 'text-stone', 'border', 'border-stone/20');
+          });
+          btn.classList.remove('bg-white', 'text-stone', 'border', 'border-stone/20');
+          btn.classList.add('bg-sage', 'text-white');
+
+          // Filter items
+          eventItems.forEach((item: EventItem) => {
+            const category: string = item.dataset.category;
+            if (filter === 'all' || category === filter) {
+              item.style.display = '';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 50);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
+)}

@@ -1,0 +1,234 @@
+
+---
+import events from '../data/events.json';
+
+export interface Props {
+  initialYear?: number;
+  initialMonth?: number;
+  showNavigation?: boolean;
+  showLegend?: boolean;
+  class?: string;
+}
+
+const {
+  initialYear,
+  initialMonth,
+  showNavigation = true,
+  showLegend = true,
+  class: className = ''
+} = Astro.props;
+
+const sortedEvents = [...events].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const today = new Date();
+const currentYear = initialYear ?? today.getFullYear();
+const currentMonth = initialMonth ?? today.getMonth();
+
+function getCalendarDays(year: number, month: number, allEvents: typeof events, compareDate: Date) {
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const startPadding = firstDay.getDay();
+  const daysInMonth = lastDay.getDate();
+
+  const days: Array<{ day: number | null; events: typeof events; isToday: boolean; isPadding: boolean }> = [];
+
+  for (let i = 0; i < startPadding; i++) {
+    days.push({ day: null, events: [], isToday: false, isPadding: true });
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const dayEvents = allEvents.filter(e => e.date === dateStr);
+    const isToday = d === compareDate.getDate() && month === compareDate.getMonth() && year === compareDate.getFullYear();
+    days.push({ day: d, events: dayEvents, isToday, isPadding: false });
+  }
+
+  return days;
+}
+
+const calendarDays = getCalendarDays(currentYear, currentMonth, sortedEvents, today);
+const eventsJson = JSON.stringify(sortedEvents);
+---
+
+<div class:list={["bg-white rounded-2xl shadow-sm border border-stone/10 p-6 md:p-10", className]}>
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-8">
+    <div class="flex items-center gap-4">
+      {showNavigation && (
+        <button
+          id="cal-prev"
+          class="w-10 h-10 rounded-full bg-cream border border-stone/10 flex items-center justify-center text-stone hover:bg-sage hover:text-white hover:border-sage transition-all"
+          aria-label="Previous month"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+      )}
+      <h3 id="cal-month-year" class="font-serif text-2xl text-charcoal min-w-[200px] text-center">
+        {monthNames[currentMonth]} {currentYear}
+      </h3>
+      {showNavigation && (
+        <button
+          id="cal-next"
+          class="w-10 h-10 rounded-full bg-cream border border-stone/10 flex items-center justify-center text-stone hover:bg-sage hover:text-white hover:border-sage transition-all"
+          aria-label="Next month"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      )}
+    </div>
+    {showLegend && (
+      <div class="hidden md:flex items-center gap-2 text-sm text-stone">
+        <span class="w-3 h-3 rounded-full bg-sage"></span>
+        <span>Has Events</span>
+        <span class="w-3 h-3 rounded-full bg-terracotta ml-3"></span>
+        <span>Today</span>
+      </div>
+    )}
+  </div>
+
+  <!-- Day Headers -->
+  <div class="grid grid-cols-7 gap-1 mb-2">
+    {dayNames.map(day => (
+      <div class="text-center text-xs font-medium text-stone uppercase tracking-wider py-2">{day}</div>
+    ))}
+  </div>
+
+  <!-- Calendar Grid -->
+  <div class="grid grid-cols-7 gap-1" id="cal-grid">
+    {calendarDays.map(({ day, events: dayEvents, isToday, isPadding }) => (
+      <div
+        class:list={[
+          "calendar-cell min-h-[80px] md:min-h-[100px] p-2 rounded-lg border transition-all duration-200 relative",
+          isPadding ? "bg-cream/50 border-transparent pointer-events-none" : "bg-white border-stone/10 hover:border-sage/30 cursor-pointer",
+          isToday && !isPadding ? "ring-2 ring-terracotta/30 border-terracotta/20" : ""
+        ]}
+        data-date={day !== null ? `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}` : ''}
+      >
+        {day !== null && (
+          <>
+            <span class:list={["text-sm font-medium", isToday ? "text-terracotta" : "text-charcoal"]}>{day}</span>
+            {dayEvents.length > 0 && (
+              <div class="mt-1 space-y-1">
+                {dayEvents.slice(0, 2).map(event => (
+                  <a
+                    href={`/events/${event.slug}`}
+                    class="block text-[10px] md:text-xs px-1.5 py-1 rounded bg-sage/10 text-sage hover:bg-sage hover:text-white transition-colors truncate"
+                    title={event.title}
+                  >
+                    {event.time} {event.title}
+                  </a>
+                ))}
+                {dayEvents.length > 2 && (
+                  <span class="text-[10px] text-stone px-1.5">+{dayEvents.length - 2} more</span>
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Mobile Legend -->
+  {showLegend && (
+    <div class="md:hidden mt-6 flex items-center gap-4 text-xs text-stone">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-sage"></span>
+        <span>Has Events</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-terracotta"></span>
+        <span>Today</span>
+      </div>
+    </div>
+  )}
+</div>
+
+<script define:vars={{ eventsData: eventsJson, monthNames, currentYear, currentMonth, todayStr: today.toISOString() }}>
+  (function() {
+    const allEvents = JSON.parse(eventsData);
+    const today = new Date(todayStr);
+    let displayYear = currentYear;
+    let displayMonth = currentMonth;
+
+    const monthYearEl = document.getElementById('cal-month-year');
+    const gridEl = document.getElementById('cal-grid');
+    const prevBtn = document.getElementById('cal-prev');
+    const nextBtn = document.getElementById('cal-next');
+
+    function getDaysInMonth(year, month) {
+      return new Date(year, month + 1, 0).getDate();
+    }
+
+    function getFirstDayOfMonth(year, month) {
+      return new Date(year, month, 1).getDay();
+    }
+
+    function formatDateStr(year, month, day) {
+      return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+
+    function renderCalendar(year, month) {
+      const daysInMonth = getDaysInMonth(year, month);
+      const startPadding = getFirstDayOfMonth(year, month);
+
+      let html = '';
+
+      for (let i = 0; i < startPadding; i++) {
+        html += '<div class="calendar-cell min-h-[80px] md:min-h-[100px] p-2 rounded-lg bg-cream/50 border-transparent pointer-events-none"></div>';
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dateStr = formatDateStr(year, month, d);
+        const dayEvents = allEvents.filter(e => e.date === dateStr);
+        const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+
+        const todayClass = isToday ? 'ring-2 ring-terracotta/30 border-terracotta/20' : '';
+        const todayTextClass = isToday ? 'text-terracotta' : 'text-charcoal';
+
+        let eventsHtml = '';
+        if (dayEvents.length > 0) {
+          const visible = dayEvents.slice(0, 2);
+          const more = dayEvents.length - 2;
+          eventsHtml = '<div class="mt-1 space-y-1">' +
+            visible.map(ev =>
+              `<a href="/events/${ev.slug}" class="block text-[10px] md:text-xs px-1.5 py-1 rounded bg-sage/10 text-sage hover:bg-sage hover:text-white transition-colors truncate" title="${ev.title.replace(/"/g, '&quot;')}">${ev.time} ${ev.title}</a>`
+            ).join('') +
+            (more > 0 ? `<span class="text-[10px] text-stone px-1.5">+${more} more</span>` : '') +
+            '</div>';
+        }
+
+        html += `<div class="calendar-cell min-h-[80px] md:min-h-[100px] p-2 rounded-lg border transition-all duration-200 relative bg-white border-stone/10 hover:border-sage/30 cursor-pointer ${todayClass}" data-date="${dateStr}">
+          <span class="text-sm font-medium ${todayTextClass}">${d}</span>
+          ${eventsHtml}
+        </div>`;
+      }
+
+      gridEl.innerHTML = html;
+      monthYearEl.textContent = `${monthNames[month]} ${year}`;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        displayMonth--;
+        if (displayMonth < 0) { displayMonth = 11; displayYear--; }
+        renderCalendar(displayYear, displayMonth);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        displayMonth++;
+        if (displayMonth > 11) { displayMonth = 0; displayYear++; }
+        renderCalendar(displayYear, displayMonth);
+      });
+    }
+  })();
+</script>
