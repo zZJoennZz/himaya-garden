@@ -28,17 +28,13 @@ import EventCalendar from '../components/EventCalendar.astro';
 </style>
 <BaseLayout title="Himaya Garden — A Desert Sanctuary for Meaningful Gatherings">
     <main class="home-flow">
-        <!-- Hero Slideshow -->
         <section class="home-hero relative min-h-screen flex flex-col justify-between overflow-hidden pt-34 md:pt-40 pb-24 md:pb-32">
-            <!-- Slides -->
             <div class="absolute inset-0 z-0">
-                <!-- Slide 1 -->
                 <div class="hero-slide active" data-slide="0">
                     <img src="/media/img/hero-image.webp" alt="Himaya Garden wedding ceremony" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-charcoal/30"></div>
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream/40"></div>
                 </div>
-                <!-- Slide 2 -->
                 <div class="hero-slide" data-slide="1">
                     <img src="/media/img/aug-high-tea-banner.jpg" alt="Himaya Garden sunset" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-charcoal/30"></div>
@@ -46,78 +42,65 @@ import EventCalendar from '../components/EventCalendar.astro';
                 </div>
             </div>
 
-            <!-- Top: Headline -->
             <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
-                <!-- Slide 1 Content -->
                 <div class="hero-content" data-slide="0">
-                    <h1 class="pt-10 md:pt-20 fade-in delay-1 text-2xl md:text-3xl tracking-[0.3em] uppercase text-white/90 font-light">
+                    <p class="fade-in delay-1 text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-4">Private events + experiences</p>
+                    <h1 class="pt-2 md:pt-6 fade-in delay-2 text-3xl md:text-5xl lg:text-6xl tracking-[0.08em] uppercase text-white font-light leading-none">
                         A Tucson Garden Venue for Meaningful Gatherings
                     </h1>
+                    <p class="fade-in delay-3 text-white/80 font-light text-base md:text-lg max-w-2xl mx-auto mt-4 md:mt-6">
+                        Weddings, private celebrations, retreats, high tea, and creative experiences rooted in Filipino hospitality, beautiful food, and the quiet magic of the desert garden.
+                    </p>
                 </div>
 
-                <!-- Slide 2 Content -->
                 <div class="hero-content hidden" data-slide="1">
-                    <h1 class="pt-10 md:pt-20 fade-in delay-1 text-2xl md:text-3xl tracking-[0.3em] uppercase text-white/90 font-light">
+                    <p class="fade-in delay-1 text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-4">A signature experience</p>
+                    <h1 class="pt-2 md:pt-6 fade-in delay-2 text-3xl md:text-5xl lg:text-6xl tracking-[0.08em] uppercase text-white font-light leading-none">
                         Morning High Tea Returns
                     </h1>
-                    <p class="fade-in delay-2 text-white/80 font-light text-base md:text-lg max-w-2xl mx-auto mt-3 md:mt-4">
-                        <span class="font-bold">[Sold Out]</span> Join us on Sunday, August 30, from 9:00 AM to 11:00 AM for an elegant High Tea experience in the Himaya Garden Tea House, featuring premium teas, handcrafted bites, and meaningful moments to savor.
+                    <p class="fade-in delay-3 text-white/80 font-light text-base md:text-lg max-w-2xl mx-auto mt-4 md:mt-6">
+                        Filipino-inspired menus, warm service, and a slow, beautiful afternoon among the garden and tea house.
                     </p>
                 </div>
             </div>
 
-            <!-- Bottom: Buttons (per slide) -->
             <div class="relative z-[3] text-center text-white max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 w-full">
-                <!-- Slide 1 Buttons -->
                 <div class="hero-buttons" data-slide="0">
                     <div class="fade-in delay-4 flex flex-wrap gap-4 justify-center">
-                        <a
-                            href="/private-events"
-                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-sage bg-sage px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal hover:border-white active:scale-95 cursor-pointer shadow-lg"
-                        >
-                            Explore Private Gatherings
+                        <a href="/contact" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-sage bg-sage px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal hover:border-white active:scale-95 cursor-pointer shadow-lg">
+                            Book a Garden Tour
                         </a>
-                        <a
-                            href="/events"
-                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white/80 bg-transparent px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal hover:border-white active:scale-95 cursor-pointer"
-                        >
-                            See Upcoming Experiences
+                        <a href="/events" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white/80 bg-transparent px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-white transition-all duration-[600ms] ease-out hover:bg-white hover:text-charcoal hover:border-white active:scale-95 cursor-pointer">
+                            Explore Upcoming Experiences
                         </a>
                     </div>
                 </div>
 
-                <!-- Slide 2 Buttons -->
                 <div class="hero-buttons hidden" data-slide="1">
                     <div class="fade-in delay-4 flex flex-wrap gap-4 justify-center">
-                        <a
-                            href="https://forms.gle/8Ev3sYqogte2VhCD7"
-                            class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-white px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-sage hover:text-white hover:border-sage active:scale-95 cursor-pointer"
-                        >
-                            Join Waitlist
+                        <a href="/private-events" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-sm border border-white bg-white px-8 py-4 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-sage hover:text-white hover:border-sage active:scale-95 cursor-pointer">
+                            Reserve High Tea
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide Indicators -->
             <div class="absolute bottom-20 left-1/2 z-[3] -translate-x-1/2 flex gap-3">
                 <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
                 <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
             </div>
 
-            <!-- Scroll indicator -->
             <div class="absolute bottom-10 left-1/2 z-[3] -translate-x-1/2 animate-bounce-slow">
                 <div class="w-px h-12 bg-white/40"></div>
             </div>
         </section>
 
-        <!-- Social Proof -->
         <section class="home-social-proof py-16 md:py-20 bg-warm-white">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="text-center mb-10">
-                    <p class="section-label fade-in">Loved by our guests</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">A 4.9-star Google experience</h2>
-                    <p class="fade-in delay-2 mt-3 text-sage text-lg">★★★★★ on Google Reviews</p>
+                    <p class="section-label fade-in">Social proof</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">4.9 Google rating</h2>
+                    <p class="fade-in delay-2 mt-3 text-sage text-lg">★★★★★ from guests who have gathered with us</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <blockquote class="fade-in border-t border-sage/20 pt-6">
@@ -125,7 +108,7 @@ import EventCalendar from '../components/EventCalendar.astro';
                         <cite class="block mt-4 text-sm text-charcoal not-italic">Samantha S. · Wedding</cite>
                     </blockquote>
                     <blockquote class="fade-in delay-1 border-t border-sage/20 pt-6">
-                        <p class="text-stone leading-relaxed">“The menu had a lovely balance of sweet and savory, with Filipino flavors woven in thoughtfully. A memorable way to celebrate.”</p>
+                        <p class="text-stone leading-relaxed">“The setting was beautiful and calm, and the Filipino-inspired menu felt thoughtful, memorable, and deeply personal.”</p>
                         <cite class="block mt-4 text-sm text-charcoal not-italic">Riley A. · High Tea</cite>
                     </blockquote>
                     <blockquote class="fade-in delay-2 border-t border-sage/20 pt-6">
@@ -136,370 +119,72 @@ import EventCalendar from '../components/EventCalendar.astro';
             </div>
         </section>
 
-        <!-- Three Ways to Experience Himaya -->
         <section class="home-ways py-24 md:py-32 bg-cream">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="text-center max-w-3xl mx-auto mb-14">
-                    <p class="section-label fade-in">Find your way in</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light text-charcoal">Three Ways to Experience Himaya</h2>
+                    <p class="section-label fade-in">Three ways to experience Himaya</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light text-charcoal">Find your reason to gather</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <a href="/contact" class="fade-in group relative overflow-hidden rounded-sm aspect-[4/5]">
                         <img src="/media/img/celebration.png" alt="Celebration at Himaya Garden" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8"><div><h3 class="font-serif text-3xl text-white">Celebrate</h3><p class="mt-2 text-white/80">Weddings, milestones, and joyful gatherings.</p></div></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8">
+                            <div>
+                                <p class="text-xs tracking-[0.25em] uppercase text-white/70">Celebrate</p>
+                                <h3 class="font-serif text-3xl text-white mt-2">Weddings & private celebrations</h3>
+                            </div>
+                        </div>
                     </a>
                     <a href="/events" class="fade-in delay-1 group relative overflow-hidden rounded-sm aspect-[4/5]">
                         <img src="/media/img/high tea two women eating at the table.jpeg" alt="High Tea experience at Himaya Garden" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8"><div><h3 class="font-serif text-3xl text-white">Experience</h3><p class="mt-2 text-white/80">High Tea, workshops, and seasonal events.</p></div></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8">
+                            <div>
+                                <p class="text-xs tracking-[0.25em] uppercase text-white/70">Experience</p>
+                                <h3 class="font-serif text-3xl text-white mt-2">High Tea, edible arts & workshops</h3>
+                            </div>
+                        </div>
                     </a>
                     <a href="/contact" class="fade-in delay-2 group relative overflow-hidden rounded-sm aspect-[4/5]">
                         <img src="/media/img/hero-image.webp" alt="Gathering at Himaya Garden" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8"><div><h3 class="font-serif text-3xl text-white">Gather</h3><p class="mt-2 text-white/80">A private garden setting for meaningful connection.</p></div></div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Email Capture - Updated to Button -->
-        <section class="home-utility hidden bg-sage py-8 md:py-10">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 text-center">
-                <p class="text-white text-[0.9375rem] font-light mb-6">
-                    Join the Himaya Garden Newsletter to learn more about our upcoming events, retreats, and workshops
-                </p>
-                <a
-                    href="https://himaya-garden-tucson.myflodesk.com/axy6okxvjb"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center rounded-sm border border-white bg-white px-8 py-3 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-transparent hover:text-white hover:border-white active:scale-95 cursor-pointer"
-                >
-                    Subscribe Now
-                </a>
-            </div>
-        </section>
-
-        <!-- Marquee -->
-        <div class="home-utility hidden bg-cream-warm py-5 overflow-hidden whitespace-nowrap border-y border-sage/10">
-            <div class="inline-flex animate-marquee">
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Weddings <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Retreats <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Baby Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Graduation Celebrations <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Bridal Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Bachelor's Parties <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Workshops <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    High Tea <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Garden Tours <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Sunset Ceremonies <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Filipino Heritage Dining <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Weddings <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Retreats <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Private Celebrations <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Birthday Parties <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Workshops <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    High Tea <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Garden Tours <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Sunset Ceremonies <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
-                    Filipino Heritage Dining <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
-                </span>
-            </div>
-        </div>
-
-        <!-- Event Calendar Preview -->
-        <section class="home-calendar py-24 md:py-32 bg-cream">
-            <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center mb-12">
-                    <p class="section-label fade-in">Plan Your Visit</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light leading-tight text-charcoal mb-4">
-                        Upcoming Events
-                    </h2>
-                    <div class="w-20 h-0.5 bg-sage mx-auto mb-6"></div>
-                    <p class="fade-in delay-2 text-lg text-stone leading-relaxed max-w-2xl mx-auto">
-                        Mark your calendar. From open houses and workshops to live music under the stars, there's always something beautiful happening at Himaya.
-                    </p>
-                </div>
-                <div class="fade-in delay-2">
-                    <EventCalendar />
-                </div>
-                <div class="text-center mt-12 fade-in delay-3">
-                    <a href="/events" class="btn-secondary">
-                        View All Events
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Intro + Venue Snapshot -->
-        <section class="home-garden py-24 md:py-32 bg-cream-warm">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <!-- Intro Text -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <p class="section-label fade-in">Himaya Garden is a sanctuary</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-charcoal">
-                        For Celebrations, Connection,<br />and Belonging
-                    </h2>
-                    <p class="fade-in delay-2 text-lg text-stone leading-relaxed">
-                        Whether you're planning a wedding, retreat, private celebration, or immersive workshop, Himaya Garden offers an experience your
-                        guests will lovingly remember long after they leave.
-                    </p>
-                </div>
-
-                <!-- Venue Snapshot -->
-                <div class="fade-in delay-3 bg-warm-white rounded-sm p-8 md:p-10 border border-sage/10 shadow-sm">
-                    <p class="text-center text-xs tracking-[0.2em] uppercase text-sage font-medium mb-6">Venue Snapshot</p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">📍</div>
-                            <p class="text-sm font-medium text-charcoal">Midtown Tucson</p>
-                            <p class="text-xs text-stone mt-0.5">427 E Limberlost Dr</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">👥</div>
-                            <p class="text-sm font-medium text-charcoal">Up to 200 Guests</p>
-                            <p class="text-xs text-stone mt-0.5">Indoor + garden capacity</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🌿</div>
-                            <p class="text-sm font-medium text-charcoal">Indoor + Garden Spaces</p>
-                            <p class="text-xs text-stone mt-0.5">Layered outdoor venues</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🅿️</div>
-                            <p class="text-sm font-medium text-charcoal">On-Site Parking</p>
-                            <p class="text-xs text-stone mt-0.5">Complimentary for guests</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🍽️</div>
-                            <p class="text-sm font-medium text-charcoal">In-House Catering</p>
-                            <p class="text-xs text-stone mt-0.5">Heritage-inspired menus</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🗓️</div>
-                            <p class="text-sm font-medium text-charcoal">Private Tours</p>
-                            <p class="text-xs text-stone mt-0.5">By appointment only</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats -->
-        <section class="home-utility hidden py-16 bg-warm-white border-y border-sage/10">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="fade-in">
-                        <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">25+</div>
-                        <div class="text-sm text-stone font-light tracking-wide">Years of Hospitality</div>
-                    </div>
-                    <div class="fade-in delay-1">
-                        <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">500+</div>
-                        <div class="text-sm text-stone font-light tracking-wide">Events Hosted</div>
-                    </div>
-                    <div class="fade-in delay-2">
-                        <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">3</div>
-                        <div class="text-sm text-stone font-light tracking-wide">Generations of Recipes</div>
-                    </div>
-                    <div class="fade-in delay-3">
-                        <div class="font-serif text-5xl md:text-[3.5rem] font-medium text-sage leading-none mb-3">1</div>
-                        <div class="text-sm text-stone font-light tracking-wide">Desert Sanctuary</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Events Hover -->
-        <section class="home-utility hidden py-24 md:py-32 bg-cream">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center mb-16">
-                    <p class="section-label fade-in">A Desert Sanctuary for<br />Meaningful Gatherings</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
-                        Designed for Mindful Presence and Joyful Moments
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    <a
-                        href="/contact"
-                        class="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white font-medium transition-all duration-[400ms] hover:gap-3"
-                    >
-                        <div class="fade-in relative rounded-sm overflow-hidden aspect-[3/4] cursor-pointer group">
-                            <img
-                                src="/media/img/gallery/wedding%20couple%20dancing%20%20in%20front%20of%20guests.jpg"
-                                alt="Weddings"
-                                class="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.08]"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent flex flex-col justify-end p-8 transition-all duration-[600ms] group-hover:from-charcoal/92 group-hover:via-charcoal/40"
-                            >
-                                <h3 class="font-serif text-2xl text-white mb-2 transition-transform duration-[600ms]">Weddings</h3>
-                                <div class="opacity-0 translate-y-5 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0">
-                                    <p class="text-[0.9375rem] text-white/80 font-light leading-relaxed mb-5">
-                                        Sunset ceremonies, receptions for up to 120, and heritage-inspired menus that make your day unforgettable.
-                                    </p>
-                                    Inquire
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a 
-                        href="/contact"
-                        class="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white font-medium transition-all duration-[400ms] hover:gap-3">
-                        <div class="fade-in delay-1 relative rounded-sm overflow-hidden aspect-[3/4] cursor-pointer group">
-                            <img
-                                src="/media/img/wellness-img.png"
-                                alt="Retreats"
-                                class="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.08]"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent flex flex-col justify-end p-8 transition-all duration-[600ms] group-hover:from-charcoal/92 group-hover:via-charcoal/40"
-                            >
-                                <h3 class="font-serif text-2xl text-white mb-2 transition-transform duration-[600ms]">Retreats</h3>
-                                <div class="opacity-0 translate-y-5 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0">
-                                    <p class="text-[0.9375rem] text-white/80 font-light leading-relaxed mb-5">
-                                        Wellness weekends, team offsites, and creative workshops in a space designed for stillness and focus.
-                                    </p>
-                                    Inquire
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="/contact"
-                        class="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white font-medium transition-all duration-[400ms] hover:gap-3"
-                    >
-                        <div class="fade-in delay-2 relative rounded-sm overflow-hidden aspect-[3/4] cursor-pointer group">
-                            <img
-                                src="/media/img/gallery/Graduation%20elevated%20shot.jpg"
-                                alt="Private Celebrations"
-                                class="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.08]"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent flex flex-col justify-end p-8 transition-all duration-[600ms] group-hover:from-charcoal/92 group-hover:via-charcoal/40"
-                            >
-                                <h3 class="font-serif text-2xl text-white mb-2 transition-transform duration-[600ms]">Private Celebrations</h3>
-                                <div class="opacity-0 translate-y-5 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0">
-                                    <p class="text-[0.9375rem] text-white/80 font-light leading-relaxed mb-5">
-                                        Milestones, reunions, and anniversaries in a hidden sanctuary built for connection over crowds.
-                                    </p>
-                                    Inquire
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a
-                        href="/contact"
-                        class="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white font-medium transition-all duration-[400ms] hover:gap-3"
-                    >
-                        <div class="fade-in delay-3 relative rounded-sm overflow-hidden aspect-[3/4] cursor-pointer group">
-                            <img
-                                src="/media/img/workshop.webp"
-                                alt="Workshops"
-                                class="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.08]"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent flex flex-col justify-end p-8 transition-all duration-[600ms] group-hover:from-charcoal/92 group-hover:via-charcoal/40"
-                            >
-                                <h3 class="font-serif text-2xl text-white mb-2 transition-transform duration-[600ms]">Workshops</h3>
-                                <div class="opacity-0 translate-y-5 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0">
-                                    <p class="text-[0.9375rem] text-white/80 font-light leading-relaxed mb-5">
-                                        Cooking classes, art sessions, and cultural programming in a garden that inspires creation.
-                                    </p>
-                                    Inquire
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex items-end p-8">
+                            <div>
+                                <p class="text-xs tracking-[0.25em] uppercase text-white/70">Gather</p>
+                                <h3 class="font-serif text-3xl text-white mt-2">Retreats, corporate & community</h3>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="text-center fade-in">
-                    <a href="/contact" class="btn-primary">Book a Private Tour</a>
-                </div>
             </div>
         </section>
 
-        <!-- High Tea -->
         <section class="home-high-tea py-24 md:py-32 bg-warm-white">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div>
-                        <p class="section-label fade-in">Our Signature High Tea</p>
+                        <p class="section-label fade-in">Your gateway product</p>
                         <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 text-charcoal">Signature High Tea</h2>
                         <div class="fade-in delay-2">
                             <p class="text-lg text-stone leading-relaxed mb-5">
-                                Our most requested sold out gathering. A culinary experience of delicate pastries, heritage-inspired finger foods, and
-                                botanical teas.
+                                Our most loved gathering is also our easiest way to experience the magic of Himaya: elegant, intimate, and rooted in the warmth of Filipino hospitality.
                             </p>
                             <p class="text-stone leading-relaxed mb-6">
-                                Rooted in the tradition of Filipino merienda and reimagined through three generations of bakers, our High Tea is more
-                                than a meal — it is a slowing down. A remembering. A celebration of the sweet and savory moments that connect us.
+                                Built around seasonal sweets, savory bites, artisan teas, and warm conversation, our high tea invites guests to slow down and savor what matters most — the stories, the flavors, the people beside them.
                             </p>
                             <ul class="list-none mb-8">
                                 <li class="flex items-start gap-3 py-3 text-stone text-[0.9375rem] font-light border-b border-charcoal/5">
-                                    <span class="text-sage text-xl leading-none">◈</span> Seasonal menu crafted by Odette & Milana
+                                    <span class="text-sage text-xl leading-none">◈</span> Filipino-inspired menus with tea service and handcrafted sweets
                                 </li>
                                 <li class="flex items-start gap-3 py-3 text-stone text-[0.9375rem] font-light border-b border-charcoal/5">
-                                    <span class="text-sage text-xl leading-none">◈</span> Tea house seating for up to 30 guests
+                                    <span class="text-sage text-xl leading-none">◈</span> Ideal for bridal showers, birthdays, mother-daughter dates, and intimate gatherings
                                 </li>
                                 <li class="flex items-start gap-3 py-3 text-stone text-[0.9375rem] font-light border-b border-charcoal/5">
-                                    <span class="text-sage text-xl leading-none">◈</span> Perfect for bridal showers, birthdays, retirements, or corporate
-                                    meetings
+                                    <span class="text-sage text-xl leading-none">◈</span> A memorable, approachable entry point to the Himaya experience
                                 </li>
                             </ul>
                         </div>
                         <div class="fade-in delay-3 flex flex-wrap gap-4 items-center">
-                            <a href="/events" class="btn-secondary">View Events</a>
+                            <a href="/private-events" class="btn-primary">Reserve High Tea</a>
+                            <a href="/events" class="btn-secondary">View Upcoming Dates</a>
                         </div>
                     </div>
                     <div class="fade-in delay-2">
@@ -509,359 +194,171 @@ import EventCalendar from '../components/EventCalendar.astro';
             </div>
         </section>
 
-        <!-- Features -->
-        <section class="home-garden py-24 md:py-32 bg-warm-white">
+        <section class="home-garden py-24 md:py-32 bg-cream">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center mb-16 max-w-2xl mx-auto">
-                    <p class="section-label fade-in">A Botanical Sanctuary in the Heart of Tucson</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light leading-tight text-charcoal">
-                        Step into lush greenery, desert blooms, and intimate gathering spaces
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="fade-in text-center p-8 transition-all duration-[600ms] hover:bg-cream rounded">
-                        <div class="inline-flex text-sage mb-6 transition-colors duration-[500ms] hover:text-sage-dark">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M24 4C24 4 12 12 12 24C12 32 17 40 24 44C31 40 36 32 36 24C36 12 24 4 24 4Z"></path>
-                                <path d="M24 14V34"></path>
-                                <path d="M18 20C18 20 21 18 24 18C27 18 30 20 30 20"></path>
-                                <path d="M18 28C18 28 21 26 24 26C27 26 30 28 30 28"></path>
-                            </svg>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="order-2 lg:order-1">
+                        <p class="section-label fade-in">The garden</p>
+                        <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-charcoal">
+                            A visual, sensory, emotional experience
+                        </h2>
+                        <div class="fade-in delay-2 space-y-5 text-stone leading-relaxed text-lg">
+                            <p>
+                                Himaya Garden feels like a hidden sanctuary in the middle of Tucson — where soft light, greenery, and warm natural textures settle the body and open the heart.
+                            </p>
+                            <p>
+                                It is desert and bloom, ceremony and conversation, stillness and celebration. The space invites guests to slow down, look around, and feel the moment.
+                            </p>
+                            <p>
+                                Every angle is intentionally beautiful, but never forced. The garden already carries the story. We simply create a place where people can gather inside it.
+                            </p>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-charcoal leading-snug">Private garden venue with layered outdoor spaces</h3>
-                        <p class="text-sm text-stone leading-relaxed">
-                            Lush greenery, curated garden paths, and intimate gathering spaces designed for beauty and flow.
-                        </p>
+                        <div class="mt-8 fade-in delay-3 grid grid-cols-2 gap-4 text-sm text-charcoal">
+                            <div class="bg-warm-white border border-sage/10 p-4 rounded-sm">
+                                <div class="text-2xl mb-2">🌿</div>
+                                <p class="font-medium">Layered outdoor spaces</p>
+                            </div>
+                            <div class="bg-warm-white border border-sage/10 p-4 rounded-sm">
+                                <div class="text-2xl mb-2">🌤️</div>
+                                <p class="font-medium">Golden-hour ambience</p>
+                            </div>
+                            <div class="bg-warm-white border border-sage/10 p-4 rounded-sm">
+                                <div class="text-2xl mb-2">✨</div>
+                                <p class="font-medium">Intimate yet elevated</p>
+                            </div>
+                            <div class="bg-warm-white border border-sage/10 p-4 rounded-sm">
+                                <div class="text-2xl mb-2">📍</div>
+                                <p class="font-medium">Midtown Tucson</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="fade-in delay-1 text-center p-8 transition-all duration-[600ms] hover:bg-cream rounded">
-                        <div class="inline-flex text-sage mb-6 transition-colors duration-[500ms] hover:text-sage-dark">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="24" cy="24" r="8"></circle>
-                                <path d="M24 8V16"></path>
-                                <path d="M24 32V40"></path>
-                                <path d="M8 24H16"></path>
-                                <path d="M32 24H40"></path>
-                                <path d="M12.7 12.7L18.3 18.3"></path>
-                                <path d="M29.7 29.7L35.3 35.3"></path>
-                                <path d="M12.7 35.3L18.3 29.7"></path>
-                                <path d="M29.7 18.3L35.3 12.7"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-xl mb-4 text-charcoal leading-snug">Desert-meets-botanical aesthetic</h3>
-                        <p class="text-sm text-stone leading-relaxed">
-                            Where desert resilience meets botanical care — strength and softness in harmony.
-                        </p>
-                    </div>
-                    <div class="fade-in delay-2 text-center p-8 transition-all duration-[600ms] hover:bg-cream rounded">
-                        <div class="inline-flex text-sage mb-6 transition-colors duration-[500ms] hover:text-sage-dark">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="8" y="12" width="32" height="24" rx="2"></rect>
-                                <circle cx="24" cy="24" r="6"></circle>
-                                <path d="M8 20L16 14L24 20"></path>
-                                <path d="M32 26L40 20L40 32"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-xl mb-4 text-charcoal leading-snug">Naturally photogenic at every angle</h3>
-                        <p class="text-sm text-stone leading-relaxed">The garden already tells a story. Your event doesn't need to be "styled."</p>
-                    </div>
-                    <div class="fade-in delay-3 text-center p-8 transition-all duration-[600ms] hover:bg-cream rounded">
-                        <div class="inline-flex text-sage mb-6 transition-colors duration-[500ms] hover:text-sage-dark">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 36H44"></path>
-                                <path d="M8 32C8 32 16 24 24 24C32 24 40 32 40 32"></path>
-                                <circle cx="24" cy="16" r="6"></circle>
-                                <path d="M12 12L16 16"></path>
-                                <path d="M36 12L32 16"></path>
-                                <path d="M24 6V10"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-serif text-xl mb-4 text-charcoal leading-snug">Sunset ceremonies that require no extra décor</h3>
-                        <p class="text-sm text-stone leading-relaxed">That golden hour moment when the desert softens and the light turns magical.</p>
+                    <div class="order-1 lg:order-2 fade-in delay-2">
+                        <img src="/media/img/AG1_4.jpg" alt="Himaya Garden setting" class="w-full h-full object-cover rounded-sm shadow-sm" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Food -->
-        <section class="home-food py-24 md:py-32 bg-cream">
+        <section class="home-food py-24 md:py-32 bg-warm-white">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="flex flex-col gap-4">
                             <div class="rounded-sm overflow-hidden aspect-[4/5]">
-                                <img
-                                    src="/media/img/collage-2.webp"
-                                    alt="Himaya Garden catering"
-                                    class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]"
-                                />
+                                <img src="/media/img/collage-2.webp" alt="Himaya Garden catering" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]" />
                             </div>
                         </div>
                         <div class="flex flex-col gap-4 mt-8">
                             <div class="rounded-sm overflow-hidden aspect-[4/5]">
-                                <img
-                                    src="/media/img/collage-3_4.webp"
-                                    alt="Filipino-inspired cuisine"
-                                    class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]"
-                                />
+                                <img src="/media/img/collage-3_4.webp" alt="Filipino-inspired cuisine" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]" />
                             </div>
                             <div class="rounded-sm overflow-hidden aspect-[4/3]">
-                                <img
-                                    src="/media/img/collage-3_7.webp"
-                                    alt="Garden dining"
-                                    class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]"
-                                />
+                                <img src="/media/img/collage-3_7.webp" alt="Garden dining" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-[1.05]" />
                             </div>
                         </div>
                     </div>
                     <div>
-                        <p class="section-label fade-in">Heritage on Every Plate</p>
+                        <p class="section-label fade-in">Food that carries memory</p>
                         <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8 text-charcoal">
-                            Food That Carries Memory
+                            Filipino roots, culinary differentiation, and heartfelt hospitality
                         </h2>
                         <div class="fade-in delay-2">
                             <p class="text-lg text-stone leading-relaxed mb-5">
-                                Third- and fourth-generation bakers with roots in Guam and the Philippines. In our family, food was never just food.
-                                It was how love was expressed. How stories were told. How community was built.
+                                Food at Himaya is never generic. It is rooted in heritage, shaped by generations, and built around the idea that the table is where people feel seen.
                             </p>
                             <p class="text-stone leading-relaxed mb-5">
-                                From Cebuano heritage dishes to garden-fresh seasonal offerings, our catering weaves culture into every bite. We
-                                believe that what you serve your guests should be as meaningful as the gathering itself.
+                                Our menus reflect the warmth of Filipino family gatherings — generous, soulful, sensory — while also standing apart with a refined, intentional, garden-to-table sensibility.
                             </p>
                             <p class="text-stone leading-relaxed mb-5">
-                                Whether it's an intimate tea service, a family-style feast, or a curated tasting menu, we approach each event with the
-                                same intention: to nourish both body and soul.
+                                From ube pastries to savory favorites, each plate tells a story of culture, memory, and care. Guests remember the food because it feels personal, not formulaic.
                             </p>
                         </div>
                         <div class="fade-in delay-3 flex flex-wrap gap-4 items-center mt-8">
                             <a href="/contact" class="btn-secondary">Inquire About Catering</a>
-                            <a href="/contact" class="btn-primary">Book a Tour</a>
+                            <a href="/private-events" class="btn-primary">See Private Event Offerings</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Video Section - Immersion -->
-        <section class="home-utility hidden py-24 md:py-32 bg-warm-white">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center mb-12 max-w-3xl mx-auto">
-                    <p class="section-label fade-in">Experience the Garden</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
-                        What Does It Feel Like to Be Here?
+        <section class="home-calendar py-24 md:py-32 bg-cream-warm">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+                <div class="text-center mb-12">
+                    <p class="section-label fade-in">Dynamic calendar</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light leading-tight text-charcoal mb-4">
+                        Upcoming Experiences
                     </h2>
-                    <p class="fade-in delay-2 text-stone mt-4 text-lg">
-                        Let the garden show you. Watch the light shift, hear the rustle of leaves, and feel the calm of this desert sanctuary.
+                    <p class="fade-in delay-2 text-lg text-stone leading-relaxed max-w-2xl mx-auto">
+                        A rotating calendar of gatherings, workshops, high tea, and seasonal experiences designed to bring people together in a warm and spacious garden setting.
                     </p>
                 </div>
-                <div class="fade-in delay-3 relative aspect-video rounded-sm overflow-hidden bg-charcoal/5 group max-w-4xl mx-auto">
-                    <!-- Video -->
-                    <video 
-                        id="heroVideo"
-                        src="/media/videos/7be962ce53c449029231c0c026123bf8.HD-720p-4.5Mbps-74244527.mp4" 
-                        poster="/media/img/hero-image.webp"
-                        muted 
-                        loop 
-                        playsinline 
-                        class="w-full h-full object-cover"
-                    ></video>
-
-                    <!-- Overlay with Play Button -->
-                    <div id="videoOverlay" class="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/30 transition-all duration-500 flex items-center justify-center cursor-pointer">
-                        <!-- Play button -->
-                        <div id="playButton" class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-charcoal ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                <polygon points="5,3 19,12 5,21" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Label -->
-                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-charcoal/70 backdrop-blur-sm text-white text-xs tracking-[0.2em] uppercase px-5 py-2.5 rounded-full font-medium pointer-events-none">
-                        ▶ Watch the Garden Come Alive
-                    </div>
-                    <!-- Subtle gradient bottom -->
-                    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-charcoal/10 to-transparent pointer-events-none"></div>
+                <div class="fade-in delay-3">
+                    <EventCalendar />
                 </div>
-                <div class="text-center mt-8 fade-in delay-4">
-                    <p class="text-sm text-stone font-light">Experience the garden in motion — or <a href="/contact" class="text-sage hover:underline">schedule a tour</a> to see it in person</p>
+                <div class="text-center mt-12 fade-in delay-4">
+                    <a href="/events" class="btn-secondary">Explore All Experiences</a>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Preview -->
-        <section class="home-utility hidden py-24 md:py-32 bg-warm-white">
-            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center mb-16">
-                    <p class="section-label fade-in">Visual Stories</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
-                        The Garden Already Tells a Story
-                    </h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-                    <div class="fade-in relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/img-editorial-section-1.webp"
-                            alt="Wedding ceremony"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Weddings
-                            </span>
-                        </div>
-                    </div>
-                    <div class="fade-in delay-1 relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/5_bc279829-3af1-4df1-a098-c92e50d2bafa.webp"
-                            alt="Garden party"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Celebrations
-                            </span>
-                        </div>
-                    </div>
-                    <div class="fade-in delay-2 relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/celebration.png"
-                            alt="Outdoor reception"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Gatherings
-                            </span>
-                        </div>
-                    </div>
-                    <div class="fade-in relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/Screenshot 2026-06-11 011513.png"
-                            alt="Desert blooms"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Garden
-                            </span>
-                        </div>
-                    </div>
-                    <div class="fade-in delay-1 relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/dining.png"
-                            alt="Intimate dinner"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Dining
-                            </span>
-                        </div>
-                    </div>
-                    <div class="fade-in delay-2 relative rounded-sm overflow-hidden aspect-[4/3] cursor-pointer group">
-                        <img
-                            src="/media/img/sunset.jpg"
-                            alt="Sunset celebration"
-                            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.1]"
-                        />
-                        <div
-                            class="absolute inset-0 bg-charcoal/0 transition-all duration-[600ms] flex items-center justify-center group-hover:bg-charcoal/20"
-                        >
-                            <span
-                                class="font-serif text-2xl text-white opacity-0 translate-y-4 transition-all duration-[600ms] group-hover:opacity-100 group-hover:translate-y-0"
-                            >
-                                Sunset
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center fade-in delay-3 flex flex-wrap gap-4 items-center justify-center">
-                    <a href="/gallery" class="btn-secondary">View Full Gallery</a>
-                    <a href="/contact" class="btn-primary">Book a Tour</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- What Is Included -->
-        <section class="home-included py-20 md:py-24 bg-cream-warm">
+        <section class="home-included py-20 md:py-24 bg-cream">
             <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="text-center max-w-3xl mx-auto mb-12">
-                    <p class="section-label fade-in">A thoughtful starting point</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">What’s Included / Starting Investment</h2>
+                    <p class="section-label fade-in">What’s included</p>
+                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">Starting investment</h2>
                     <p class="fade-in delay-2 mt-4 text-lg text-stone leading-relaxed">Every gathering begins with a conversation, a walk through the garden, and a plan shaped around your people.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="fade-in bg-warm-white p-7 border border-sage/10"><h3 class="font-serif text-2xl text-charcoal mb-3">The setting</h3><p class="text-stone leading-relaxed">Private access to layered garden spaces, the tea house, and on-site parking.</p></div>
-                    <div class="fade-in delay-1 bg-warm-white p-7 border border-sage/10"><h3 class="font-serif text-2xl text-charcoal mb-3">The essentials</h3><p class="text-stone leading-relaxed">Thoughtful hosting, in-house catering options, and a venue plan built around your gathering.</p></div>
-                    <div class="fade-in delay-2 bg-warm-white p-7 border border-sage/10"><h3 class="font-serif text-2xl text-charcoal mb-3">Your starting point</h3><p class="text-stone leading-relaxed">Investment is tailored to guest count, date, menu, and experience. <a href="/contact" class="text-sage hover:underline">Request details</a>.</p></div>
+                    <div class="fade-in bg-warm-white p-7 border border-sage/10 rounded-sm"><h3 class="font-serif text-2xl text-charcoal mb-3">The setting</h3><p class="text-stone leading-relaxed">Private access to layered garden spaces, the tea house, and on-site parking for your guests.</p></div>
+                    <div class="fade-in delay-1 bg-warm-white p-7 border border-sage/10 rounded-sm"><h3 class="font-serif text-2xl text-charcoal mb-3">The essentials</h3><p class="text-stone leading-relaxed">Thoughtful hosting, in-house catering options, and a venue plan shaped around your event vision.</p></div>
+                    <div class="fade-in delay-2 bg-warm-white p-7 border border-sage/10 rounded-sm"><h3 class="font-serif text-2xl text-charcoal mb-3">Your starting point</h3><p class="text-stone leading-relaxed">Investment varies by guest count, date, menu, and experience. <a href="/contact" class="text-sage hover:underline">Request details</a>.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Founder Story -->
         <section class="home-founder py-20 md:py-24 bg-warm-white">
             <div class="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
                     <img src="/media/img/Odette and Milana posing in front of Himaya Garden Mural.webp" alt="Odette and Milana D'Aniello, founders of Himaya Garden" class="w-full aspect-[4/3] object-cover rounded-sm" />
                     <div>
-                        <p class="section-label fade-in">The women behind Himaya</p>
-                        <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal mb-5">Built by Odette + Milana</h2>
-                        <p class="fade-in delay-2 text-lg text-stone leading-relaxed">A mother and daughter, third- and fourth-generation bakers, created Himaya Garden to make space for heritage, hospitality, and meaningful celebration.</p>
+                        <p class="section-label fade-in">Odette + Milana</p>
+                        <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal mb-5">The story behind Himaya</h2>
+                        <p class="fade-in delay-2 text-lg text-stone leading-relaxed">A mother and daughter, third- and fourth-generation bakers, created Himaya Garden to make space for heritage, hospitality, and meaningful celebration. What began as a love for family recipes became a sanctuary for gathering — where food, culture, and care are woven into each experience.</p>
                         <a href="/about-us" class="btn-secondary inline-flex mt-7">Read Our Story</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Auto-Rotate -->
         <section class="home-reviews py-24 md:py-32 bg-sage/10">
             <div class="max-w-7xl mx-auto text-center px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="mb-12">
-                    <p class="section-label fade-in">Reviews + Press</p>
+                    <p class="section-label fade-in">Reviews + press</p>
                     <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
-                        Loved by the Himaya Community
+                        Loved by the Himaya community
                     </h2>
                 </div>
                 <GoogleReviews />
             </div>
         </section>
 
-        <!-- CTA -->
         <section class="home-cta relative py-32 md:py-40 text-center text-white overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="/media/img/AG1_4.jpg" alt="Himaya Garden sunset" class="w-full h-full object-cover" />
             </div>
             <div class="absolute inset-0 bg-charcoal/50 z-[1]"></div>
             <div class="relative z-[2] max-w-3xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+                <p class="section-label text-white/80 fade-in">Come experience Himaya</p>
                 <h2 class="fade-in font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-                    Ready to Gather<br />With Intention?
+                    Gather in a place that feels like memory in the making.
                 </h2>
                 <p class="fade-in delay-1 text-lg md:text-xl leading-relaxed mb-8 text-white/80">
-                    Let's walk the garden together. We'd love to hear about your vision and show you how Himaya can become the setting for your
-                    meaningful celebration.
+                    Explore the garden, taste the food, and imagine your next meaningful gathering among lush greenery, warm hospitality, and a golden desert sky.
                 </p>
-                <div class="fade-in delay-2">
-                    <a href="/contact" class="btn-primary">Schedule a Garden Tour</a>
+                <div class="fade-in delay-2 flex flex-wrap gap-4 justify-center">
+                    <a href="/contact" class="btn-primary">Book a Garden Tour</a>
+                    <a href="/events" class="btn-secondary border-white text-white hover:bg-white hover:text-charcoal">Explore Upcoming Experiences</a>
                 </div>
             </div>
         </section>

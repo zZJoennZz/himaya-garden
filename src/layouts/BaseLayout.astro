@@ -12,6 +12,7 @@ const {
     title,
     description = 'Himaya Garden — A desert sanctuary for meaningful gatherings in Tucson, Arizona. Rooted in Filipino heritage, designed for intentional celebration.',
 } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://himayagarden.com');
 ---
 
 <!doctype html>
@@ -21,6 +22,8 @@ const {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
