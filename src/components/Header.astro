@@ -1,13 +1,144 @@
 ---
+// --- Navigation Data ---
 const navLinks = [
-    // { href: '/venue-rates', label: 'Venue Details' },
-    // { href: '/upcoming-events', label: 'Upcoming Events' },
-    { href: '/private-events', label: 'Private Events' },
-    { href: '/gallery', label: 'Gallery' },
-    { href: 'https://dragonflycakes.com/', label: 'Dragonfly Cakes®' },
-    { href: '/about-us', label: 'Our Story' },
+    {
+        label: 'Gather',
+        href: '#',
+        subLinks: [
+            { label: 'Weddings', href: '/weddings' },
+            { label: 'Private Tea', href: '/private-tea' },
+            { label: 'Celebrations', href: '/celebrations' },
+            { label: 'Retreats', href: '/retreats' },
+            { label: 'Corporate', href: '/corporate' },
+        ]
+    },
+    {
+        label: 'Experiences',
+        href: '#',
+        subLinks: [
+            { label: 'High Tea', href: '/high-tea' },
+            { label: 'Edible Arts Lab', href: '/edible-arts-lab' },
+            { label: 'Workshops', href: '/workshops' },
+            { label: 'Calendar', href: '/calendar' },
+        ]
+    },
+    {
+        label: 'The Garden',
+        href: '/the-garden',
+        subLinks: []
+    },
+    {
+        label: 'Food',
+        href: '#',
+        subLinks: [
+            { label: 'Catering', href: '/catering' },
+            { label: 'High Tea menus', href: '/high-tea-menus' },
+            { label: 'Dragonfly Cakes', href: 'https://dragonflycakes.com/' },
+        ]
+    },
+    {
+        label: 'Our Story',
+        href: '/about-us',
+        subLinks: []
+    },
 ];
 ---
+
+<header id="main-header">
+    <div class="section-padding header-inner max-w-7xl mx-auto">
+        <a href="/" class="logo">
+            <div class="logo-icon">
+                <img src="/media/img/hg-logo-orginal.webp" alt="Himaya Garden logo" />
+            </div>
+            <span class="logo-text">Himaya Garden</span>
+        </a>
+
+        <div style="display: flex; align-items: center;">
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <ul style="display: flex; gap: 2rem; align-items: center; list-style: none; margin: 0; padding: 0;">
+                    {
+                        navLinks.map((item) => (
+                            <li class="nav-item" style="position: relative; list-style: none;">
+                                {
+                                    item.subLinks && item.subLinks.length > 0 ? (
+                                        <>
+                                            <button class="nav-link" type="button">
+                                                {item.label}
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                {
+                                                    item.subLinks.map((sub) => (
+                                                        <li>
+                                                            <a href={sub.href}>
+                                                                {sub.label}
+                                                            </a>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </>
+                                    ) : (
+                                        <a href={item.href} class="nav-link">
+                                            {item.label}
+                                        </a>
+                                    )
+                                }
+                            </li>
+                        ))
+                    }
+                    <li class="nav-item" style="position: relative; list-style: none;">
+                        <a href="/contact" class="nav-link btn-primary">Book a Tour</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <button class="mobile-menu-btn" id="menuBtn" type="button" aria-label="Toggle menu" aria-controls="mobileNav" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        {
+            navLinks.map((item, index) => (
+                <>
+                    {
+                        item.subLinks && item.subLinks.length > 0 ? (
+                            <>
+                                <button
+                                    class="mobile-nav-label"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls={`mobileSubmenu-${index}`}
+                                    style={`transition-delay: ${index * 50}ms`}
+                                >
+                                    {item.label}
+                                    <span class="mobile-nav-arrow" aria-hidden="true"></span>
+                                </button>
+                                <div class="mobile-sub-group" id={`mobileSubmenu-${index}`}>
+                                    {
+                                        item.subLinks.map((sub, subIndex) => (
+                                            <a href={sub.href} class="mobile-sub-link" style={`transition-delay: ${(index * 50) + (subIndex * 30)}ms`}>
+                                                {sub.label}
+                                            </a>
+                                        ))
+                                    }
+                                </div>
+                            </>
+                        ) : (
+                            <a href={item.href} style={`transition-delay: ${index * 50}ms`}>
+                                {item.label}
+                            </a>
+                        )
+                    }
+                </>
+            ))
+        }
+        <a href="/contact" style="transition-delay: 400ms; margin-top: 1.2rem; font-weight: 500; background: var(--color-sage); color: white !important; padding: 0.5rem 2.5rem; border-radius: 9999px; font-size: 1.3rem;">Book a Tour</a>
+    </nav>
+</header>
 
 <style>
     #main-header {
@@ -18,6 +149,7 @@ const navLinks = [
         right: 0;
         z-index: 50;
         transition: all 0.5s ease;
+        backdrop-filter: blur(2px);
     }
 
     #main-header.scrolled {
@@ -34,12 +166,24 @@ const navLinks = [
         padding-bottom: 1.5rem;
     }
 
+    .section-padding {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .max-w-7xl {
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .logo {
         display: flex;
         align-items: center;
         gap: 0.75rem;
         position: relative;
         z-index: 50;
+        text-decoration: none;
     }
 
     .logo-icon {
@@ -51,6 +195,7 @@ const navLinks = [
     .logo-icon img {
         width: 100%;
         height: 100%;
+        display: block;
     }
 
     .logo-text {
@@ -66,14 +211,9 @@ const navLinks = [
         color: var(--color-sage);
     }
 
-    .header-phone:hover {
-        color: var(--color-sage);
-    }
-
     .desktop-nav {
         display: none;
         align-items: center;
-        gap: 2.5rem;
     }
 
     @media (min-width: 768px) {
@@ -89,6 +229,13 @@ const navLinks = [
         text-transform: uppercase;
         color: rgba(45, 45, 45, 0.8);
         transition: color 0.4s ease;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.5rem 0;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        font-family: inherit;
     }
 
     .nav-link:hover {
@@ -98,7 +245,66 @@ const navLinks = [
     .nav-link.btn-primary {
         font-size: 0.75rem;
         padding: 0.75rem 1.5rem;
+        background-color: var(--color-sage);
         color: #fff !important;
+        border-radius: 9999px;
+        transition: background 0.3s ease;
+        text-decoration: none;
+    }
+
+    .nav-link.btn-primary:hover {
+        background-color: #5f7a5e;
+        color: #fff !important;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        min-width: 200px;
+        padding: 0.75rem 0;
+        border-radius: 0.75rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.25s ease;
+        list-style: none;
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        pointer-events: none;
+        margin: 0;
+    }
+
+    .nav-item:hover .dropdown-menu,
+    .nav-item:focus-within .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .dropdown-menu li {
+        padding: 0;
+        list-style: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: var(--color-charcoal);
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease;
+        letter-spacing: 0.02em;
+        text-transform: none;
+    }
+
+    .dropdown-menu a:hover {
+        background: rgba(127, 155, 126, 0.08);
+        color: var(--color-sage);
     }
 
     .mobile-menu-btn {
@@ -147,14 +353,16 @@ const navLinks = [
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 2rem;
+        justify-content: flex-start;
+        gap: 0.75rem;
         transition: all 0.7s ease-out;
         opacity: 0;
         visibility: hidden;
-        overflow-y: auto;   
-        padding-top: 5rem; 
+        overflow-y: auto;
+        padding-top: 7rem;
         padding-bottom: 2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 
     .mobile-nav.open {
@@ -162,17 +370,28 @@ const navLinks = [
         visibility: visible;
     }
 
-    .mobile-nav a {
+    .mobile-nav a,
+    .mobile-nav .mobile-nav-label {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: var(--color-charcoal);
-        transition: color 0.4s ease;
+        text-decoration: none;
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.6s ease-out;
+        width: 100%;
+        text-align: center;
+        padding: 0.2rem 0;
     }
 
-    .mobile-nav.open a {
+    .mobile-nav .mobile-nav-label {
+        background: none;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .mobile-nav.open a,
+    .mobile-nav.open .mobile-nav-label {
         opacity: 1;
         transform: translateY(0);
     }
@@ -180,46 +399,160 @@ const navLinks = [
     .mobile-nav a:hover {
         color: var(--color-sage);
     }
+
+    .mobile-sub-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        width: 100%;
+        margin: 0.25rem 0 0.5rem 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease, opacity 0.35s ease;
+    }
+
+    .mobile-sub-group.open {
+        max-height: 20rem;
+        opacity: 1;
+    }
+
+    .mobile-sub-group .mobile-sub-link {
+        font-size: 1.1rem;
+        font-family: 'Cormorant Garamond', serif;
+        color: #4a4a4a;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: all 0.5s ease-out 0.1s;
+        letter-spacing: 0.02em;
+        padding: 0.1rem 0;
+    }
+
+    .mobile-nav.open .mobile-sub-group.open .mobile-sub-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-nav-arrow {
+        display: inline-block;
+        width: 0.55rem;
+        height: 0.55rem;
+        margin-left: 0.75rem;
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        transform: translateY(-0.15rem) rotate(45deg);
+        transition: transform 0.25s ease;
+    }
+
+    .mobile-nav-label[aria-expanded="true"] .mobile-nav-arrow {
+        transform: translateY(0.1rem) rotate(225deg);
+    }
+
+    .mobile-sub-link:hover {
+        color: var(--color-sage);
+    }
+
+    .mobile-nav-label {
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 1.2rem !important;
+        color: #5a5a5a;
+        margin-top: 0.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding-bottom: 0.2rem;
+    }
+
+    :root {
+        --color-cream: #f7f3ee;
+        --color-charcoal: #2d2d2d;
+        --color-sage: #7f9b7e;
+        --color-white: #ffffff;
+    }
 </style>
 
-<header id="main-header">
-    <div class="section-padding header-inner max-w-7xl mx-auto">
-        <a href="/" class="logo">
-            <div class="logo-icon">
-                <img src="/media/img/hg-logo-orginal.webp" alt="Himaya Garden logo" />
-            </div>
-            <span class="logo-text">Himaya Garden</span>
-        </a>
-        <div style="display: flex; align-items: center;">
-            <nav class="desktop-nav">
-                {
-                    navLinks.map((link) => (
-                        <a href={link.href} class="nav-link">
-                            {link.label}
-                        </a>
-                    ))
-                }
-                <a href="/contact" class="nav-link btn-primary">Book a Tour</a>
-            </nav>
-        </div>
-        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-    <nav class="mobile-nav" id="mobileNav">
-        {
-            navLinks.map((link, i) => (
-                <a href={link.href} style={`transition-delay: ${i * 100}ms`}>
-                    {link.label}
-                </a>
-            ))
-        }
-        <a href="/contact" style="transition-delay: 400ms">Book a Tour</a>
-    </nav>
-</header>
+<script>
+    const initHeader = () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const header = document.getElementById('main-header');
 
-<script 
-  src="https://links.omg-rentals.com/js/external-tracking.js"
-  data-tracking-id="tk_65a6df382687476ba9b2c4006901528b">
+        if (menuBtn && mobileNav && !menuBtn.dataset.initialized) {
+            menuBtn.dataset.initialized = 'true';
+            const closeSubmenus = () => {
+                mobileNav.querySelectorAll('.mobile-nav-label[aria-expanded="true"]').forEach((label) => {
+                    label.setAttribute('aria-expanded', 'false');
+                });
+                mobileNav.querySelectorAll('.mobile-sub-group.open').forEach((submenu) => {
+                    submenu.classList.remove('open');
+                });
+            };
+
+            mobileNav.querySelectorAll('.mobile-nav-label').forEach((label) => {
+                label.addEventListener('click', () => {
+                    const submenuId = label.getAttribute('aria-controls');
+                    const submenu = submenuId ? document.getElementById(submenuId) : null;
+                    const isOpen = label.getAttribute('aria-expanded') === 'true';
+
+                    closeSubmenus();
+                    if (!isOpen && submenu) {
+                        label.setAttribute('aria-expanded', 'true');
+                        submenu.classList.add('open');
+                    }
+                });
+            });
+
+      // Toggle mobile menu
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileNav.classList.contains('open');
+        mobileNav.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+                menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+        if (isOpen) closeSubmenus();
+      });
+
+      // Close mobile menu when clicking a link
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          menuBtn.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Close mobile menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+          mobileNav.classList.remove('open');
+          menuBtn.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Scroll effect for header
+    if (header) {
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHeader, { once: true });
+    } else {
+        initHeader();
+    }
+    document.addEventListener('astro:page-load', initHeader);
 </script>
