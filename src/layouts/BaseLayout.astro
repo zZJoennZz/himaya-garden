@@ -2,17 +2,40 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import siteConfig from '../../site.config.js';
 
 export interface Props {
-    title: string;
+    title?: string;
     description?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogImage?: string;
+    ogUrl?: string;
+    twitterCard?: string;
 }
 
 const {
-    title,
-    description = 'Himaya Garden — A desert sanctuary for meaningful gatherings in Tucson, Arizona. Rooted in Filipino heritage, designed for intentional celebration.',
+    title = siteConfig.defaultTitle,
+    description = siteConfig.defaultDescription,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    ogUrl,
+    twitterCard = siteConfig.twitterCard ?? 'summary_large_image',
 } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://himayagarden.com');
+
+const siteOrigin = Astro.site?.origin ?? siteConfig.siteUrl;
+const canonicalUrl = new URL(Astro.url.pathname, siteOrigin).toString();
+const normalizedOgTitle = ogTitle ?? title ?? siteConfig.defaultTitle;
+const normalizedOgDescription = ogDescription ?? description ?? siteConfig.defaultDescription;
+const normalizedOgImage = (() => {
+    const candidate = ogImage ?? siteConfig.defaultImage;
+    return candidate.startsWith('http') ? candidate : new URL(candidate, siteOrigin).toString();
+})();
+const normalizedOgUrl = (() => {
+    const candidate = ogUrl ?? Astro.url.href;
+    return candidate.startsWith('http') ? candidate : new URL(candidate, siteOrigin).toString();
+})();
 ---
 
 <!doctype html>
@@ -23,6 +46,18 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://himayaga
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={normalizedOgTitle} />
+        <meta property="og:description" content={normalizedOgDescription} />
+        <meta property="og:image" content={normalizedOgImage} />
+        <meta property="og:url" content={normalizedOgUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteConfig.siteName} />
+        <meta name="twitter:card" content={twitterCard} />
+        <meta name="twitter:title" content={normalizedOgTitle} />
+        <meta name="twitter:description" content={normalizedOgDescription} />
+        <meta name="twitter:image" content={normalizedOgImage} />
+        <meta name="twitter:url" content={normalizedOgUrl} />
+        {siteConfig.twitterHandle && <meta name="twitter:site" content={siteConfig.twitterHandle} />}
         <meta name="robots" content="index, follow" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +65,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://himayaga
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/media/img/hg-logo-favi.png"
+        >
         <slot name="head" />
         <script>
             (function(w: any, d, t, h, s, n: any) {
