@@ -7,45 +7,134 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     description="Elegant high tea gatherings in Tucson. Choose from Filipino heritage teas or classic Royal High Tea. Book your afternoon tea experience today."
 >
     <main>
-        <section class="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(132,147,118,0.18),_transparent_58%)]"></div>
-            <div class="relative mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div>
-                        <p class="section-label fade-in">High tea experience</p>
-                        <h1 class="fade-in delay-1 font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-none text-charcoal">
-                            An afternoon of elegance and ease.
-                        </h1>
-                        <p class="fade-in delay-2 mt-6 max-w-xl text-lg leading-relaxed text-stone">
-                            Discover the art of high tea at Himaya Garden. From our heritage-inspired Filipino tea traditions to classic Royal High Tea, every experience is crafted for conversation, connection, and delight.
-                        </p>
-                        <div class="fade-in delay-3 mt-8 flex flex-wrap gap-4">
-                            <a href="/contact" class="btn-primary">Reserve Your Tea</a>
-                            <a href="/events" class="btn-secondary">Upcoming Tea Services</a>
-                        </div>
-                        <div class="fade-in delay-4 mt-10 flex flex-wrap gap-8 text-sm text-charcoal">
-                            <div>
-                                <div class="font-serif text-3xl text-sage">2-3</div>
-                                <div class="mt-1 text-stone">Hour experience</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">Seasonal</div>
-                                <div class="mt-1 text-stone">Menu options</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">Premium</div>
-                                <div class="mt-1 text-stone">Tea selection</div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="relative isolate min-h-[88svh] overflow-hidden bg-charcoal text-white">
+    <!-- Hero image -->
+    <div class="absolute inset-0">
+        <img
+            src="/media/img/high tea two women eating at the table.jpeg"
+            alt="Guests enjoying high tea at Himaya Garden"
+            class="h-full w-full object-cover object-center"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
 
-                    <div class="fade-in delay-2 overflow-hidden rounded-sm shadow-lg">
-                        <img src="/media/img/high tea two women eating at the table.jpeg" alt="High tea service at Himaya Garden" class="h-full w-full object-cover" />
-                    </div>
-                </div>
+    <!-- Layered overlay -->
+    <div class="absolute inset-0 bg-charcoal/35"></div>
+    <div
+        class="absolute inset-0 bg-gradient-to-r from-charcoal/75 via-charcoal/40 to-charcoal/10"
+    ></div>
+    <div
+        class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-charcoal/20"
+    ></div>
+
+    <!-- Subtle botanical texture -->
+    <div
+        class="absolute inset-0 opacity-[0.08]"
+        style="
+            background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 28px 28px;
+        "
+    ></div>
+
+    <!-- Content -->
+    <div
+        class="relative z-10 flex min-h-[88svh] items-end
+               mx-auto max-w-7xl px-6 pb-16 pt-32
+               md:px-12 md:pb-20
+               lg:px-20 lg:pb-24
+               xl:px-32"
+    >
+        <div class="max-w-4xl">
+
+            <!-- Eyebrow -->
+            <div
+                class="fade-in flex items-center gap-3 text-xs
+                       font-medium uppercase tracking-[0.28em]
+                       text-white/75 md:text-sm"
+            >
+                <span class="h-px w-10 bg-white/50"></span>
+                High Tea at Himaya Garden
             </div>
-        </section>
 
+            <!-- Main heading -->
+            <h1
+                class="fade-in delay-1 mt-5 max-w-4xl
+                       font-serif text-5xl font-light leading-[0.95]
+                       tracking-tight text-white
+                       sm:text-6xl
+                       md:text-7xl
+                       lg:text-8xl
+                       xl:text-[7rem]"
+            >
+                An afternoon of
+                <span class="block italic text-white/90">
+                    elegance & ease.
+                </span>
+            </h1>
+
+            <!-- Description -->
+            <p
+                class="fade-in delay-2 mt-7 max-w-2xl
+                       text-base leading-relaxed text-white/80
+                       md:text-lg lg:text-xl"
+            >
+                Slow down, sip something beautiful, and share an afternoon
+                of conversation, connection, and carefully crafted tea
+                experiences.
+            </p>
+
+            <!-- CTAs -->
+            <div class="fade-in delay-3 mt-8 flex flex-wrap items-center gap-4">
+                <a
+                    href="/contact"
+                    class="group inline-flex items-center justify-center
+                           bg-warm-white px-7 py-4
+                           text-sm font-medium uppercase tracking-[0.14em]
+                           text-charcoal
+                           transition-all duration-300
+                           hover:bg-white hover:-translate-y-0.5
+                           hover:shadow-xl"
+                >
+                    <span>Reserve Your Tea</span>
+                    <span
+                        class="ml-4 transition-transform duration-300
+                               group-hover:translate-x-1"
+                    >
+                        →
+                    </span>
+                </a>
+
+                <a
+                    href="/events"
+                    class="group inline-flex items-center gap-3
+                           px-2 py-4
+                           text-sm uppercase tracking-[0.14em]
+                           text-white/90"
+                >
+                    <span>Explore Tea Experiences</span>
+                    <span
+                        class="h-px w-8 bg-white/50
+                               transition-all duration-300
+                               group-hover:w-12 group-hover:bg-white"
+                    ></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bottom scroll cue -->
+    <div
+        class="absolute bottom-7 right-6 z-10 hidden items-center gap-3
+               text-[10px] uppercase tracking-[0.25em] text-white/60
+               sm:flex md:right-12 lg:right-20 xl:right-32"
+    >
+        <span>Discover the experience</span>
+        <span class="h-10 w-px bg-white/30"></span>
+    </div>
+</section>
         <section class="bg-warm-white py-20 md:py-24">
             <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="text-center">
@@ -199,3 +288,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
     </main>
 </BaseLayout>
+
+<style>
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeInHero 0.7s ease forwards;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.08s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.16s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.24s;
+}
+
+@keyframes fadeInHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+</style>

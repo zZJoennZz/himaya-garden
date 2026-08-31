@@ -7,44 +7,169 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     description="Hands-on edible art classes at Himaya Garden. Paint with buttercream, learn art history, taste the art. Workshops for all creative levels."
 >
     <main>
-        <section class="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(132,147,118,0.18),_transparent_58%)]"></div>
-            <div class="relative mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div>
-                        <p class="section-label fade-in">The Edible Arts Lab</p>
-                        <h1 class="fade-in delay-1 font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-none text-charcoal">
-                            Paint with buttercream. Learn the story. Taste the art.
-                        </h1>
-                        <p class="fade-in delay-2 mt-6 max-w-xl text-lg leading-relaxed text-stone">
-                            Welcome to TEAL — where food, creativity, education, and gathering come together. Hands-on art classes that celebrate culture, color, and the joy of making something beautiful with your own hands.
-                        </p>
-                        <div class="fade-in delay-3 mt-8 flex flex-wrap gap-4">
-                            <a href="/contact" class="btn-primary">Register for a Class</a>
-                            <a href="/events" class="btn-secondary">See Upcoming Workshops</a>
-                        </div>
-                        <div class="fade-in delay-4 mt-10 flex flex-wrap gap-8 text-sm text-charcoal">
-                            <div>
-                                <div class="font-serif text-3xl text-sage">All levels</div>
-                                <div class="mt-1 text-stone">Welcome</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">2-3</div>
-                                <div class="mt-1 text-stone">Hour sessions</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">Take home</div>
-                                <div class="mt-1 text-stone">Your creation</div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="relative isolate min-h-[88svh] overflow-hidden bg-charcoal text-white">
+    <!-- Hero image -->
+    <div class="absolute inset-0">
+        <img
+            src="/media/img/workshop.webp"
+            alt="Guests creating edible art at a TEAL workshop"
+            class="h-full w-full object-cover object-center"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
 
-                    <div class="fade-in delay-2 overflow-hidden rounded-sm shadow-lg">
-                        <img src="/media/img/workshop.webp" alt="Edible arts workshop" class="h-full w-full object-cover" />
-                    </div>
-                </div>
+    <!-- Layered overlay -->
+    <div class="absolute inset-0 bg-charcoal/30"></div>
+
+    <div
+        class="absolute inset-0 bg-gradient-to-r
+               from-charcoal/80 via-charcoal/45 to-charcoal/10"
+    ></div>
+
+    <div
+        class="absolute inset-0 bg-gradient-to-t
+               from-charcoal/70 via-transparent to-charcoal/20"
+    ></div>
+
+    <!-- Very subtle texture -->
+    <div
+        class="absolute inset-0 opacity-[0.06]"
+        style="
+            background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 28px 28px;
+        "
+    ></div>
+
+    <!-- Decorative botanical / artistic accent -->
+    <div
+        class="absolute right-[-6rem] top-[-6rem]
+               h-64 w-64 rounded-full
+               border border-white/10
+               md:h-96 md:w-96"
+    ></div>
+
+    <div
+        class="absolute right-[-2rem] top-[-2rem]
+               h-40 w-40 rounded-full
+               border border-white/10
+               md:h-64 md:w-64"
+    ></div>
+
+    <!-- Content -->
+    <div
+        class="relative z-10 flex min-h-[88svh] items-end
+               mx-auto max-w-7xl
+               px-6 pb-16 pt-32
+               md:px-12 md:pb-20
+               lg:px-20 lg:pb-24
+               xl:px-32"
+    >
+        <div class="max-w-5xl">
+
+            <!-- Eyebrow -->
+            <div
+                class="fade-in flex items-center gap-3
+                       text-xs font-medium uppercase
+                       tracking-[0.28em] text-white/75
+                       md:text-sm"
+            >
+                <span class="h-px w-10 bg-white/50"></span>
+                The Edible Arts Lab
             </div>
-        </section>
+
+            <!-- Main heading -->
+            <h1
+                class="fade-in delay-1 mt-5 max-w-5xl
+                       font-serif text-5xl font-light leading-[0.95]
+                       tracking-tight text-white
+                       sm:text-6xl
+                       md:text-7xl
+                       lg:text-8xl
+                       xl:text-[6.5rem]"
+            >
+                Paint with buttercream.
+                <span class="block italic text-white/90">
+                    Taste the art.
+                </span>
+            </h1>
+
+            <!-- Supporting copy -->
+            <p
+                class="fade-in delay-2 mt-7 max-w-2xl
+                       text-base leading-relaxed text-white/80
+                       md:text-lg lg:text-xl"
+            >
+                A hands-on experience where food, creativity, culture,
+                and gathering come together. Learn something new,
+                make something beautiful, and enjoy the process.
+            </p>
+
+            <!-- CTAs -->
+            <div class="fade-in delay-3 mt-8 flex flex-wrap items-center gap-4">
+                <a
+                    href="/contact"
+                    class="group inline-flex items-center justify-center
+                           bg-warm-white px-7 py-4
+                           text-sm font-medium uppercase
+                           tracking-[0.14em] text-charcoal
+                           transition-all duration-300
+                           hover:-translate-y-0.5
+                           hover:bg-white hover:shadow-xl"
+                >
+                    <span>Register for a Class</span>
+
+                    <span
+                        class="ml-4 transition-transform duration-300
+                               group-hover:translate-x-1"
+                    >
+                        →
+                    </span>
+                </a>
+
+                <a
+                    href="/events"
+                    class="group inline-flex items-center gap-3
+                           px-2 py-4
+                           text-sm uppercase
+                           tracking-[0.14em] text-white/90"
+                >
+                    <span>See Upcoming Workshops</span>
+
+                    <span
+                        class="h-px w-8 bg-white/50
+                               transition-all duration-300
+                               group-hover:w-12 group-hover:bg-white"
+                    ></span>
+                </a>
+            </div>
+
+            <!-- Small supporting statement -->
+            <div
+                class="fade-in delay-4 mt-10 flex items-center gap-3
+                       text-sm text-white/65"
+            >
+                <span class="text-lg text-white/80">✦</span>
+                <span>Come curious. Leave with something you made.</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div
+        class="absolute bottom-7 right-6 z-10 hidden
+               items-center gap-3
+               text-[10px] uppercase
+               tracking-[0.25em] text-white/60
+               sm:flex md:right-12
+               lg:right-20 xl:right-32"
+    >
+        <span>Explore TEAL</span>
+        <span class="h-10 w-px bg-white/30"></span>
+    </div>
+</section>
 
         <section class="bg-warm-white py-20 md:py-24">
             <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
@@ -213,3 +338,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
     </main>
 </BaseLayout>
+<style>
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeInHero 0.7s ease forwards;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.08s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.16s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.24s;
+}
+
+@keyframes fadeInHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+</style>

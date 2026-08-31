@@ -7,200 +7,803 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     description="Intimate private tea house gatherings in Tucson. Filipino-inspired and Royal High Tea menus for showers, celebrations, and memorable moments."
 >
     <main>
-        <section class="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(132,147,118,0.18),_transparent_58%)]"></div>
-            <div class="relative mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div>
-                        <p class="section-label fade-in">Tea house experiences</p>
-                        <h1 class="fade-in delay-1 font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-none text-charcoal">
-                            An afternoon where time slows down.
-                        </h1>
-                        <p class="fade-in delay-2 mt-6 max-w-xl text-lg leading-relaxed text-stone">
-                            Intimate high tea gatherings designed for connection and celebration. Elegant tablescapes, handcrafted menus, and the warmth of Filipino hospitality in our garden tea house.
-                        </p>
-                        <div class="fade-in delay-3 mt-8 flex flex-wrap gap-4">
-                            <a href="/contact" class="btn-primary">Reserve Private Tea</a>
-                            <a href="/events" class="btn-secondary">See Upcoming Dates</a>
-                        </div>
-                        <div class="fade-in delay-4 mt-10 flex flex-wrap gap-8 text-sm text-charcoal">
-                            <div>
-                                <div class="font-serif text-3xl text-sage">30-50</div>
-                                <div class="mt-1 text-stone">Ideal guest count</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">2-3</div>
-                                <div class="mt-1 text-stone">Hour experience</div>
-                            </div>
-                            <div>
-                                <div class="font-serif text-3xl text-sage">Curated</div>
-                                <div class="mt-1 text-stone">Menu options</div>
-                            </div>
-                        </div>
+
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+        <section class="relative isolate min-h-[92svh] overflow-hidden bg-warm-white text-charcoal">
+
+            <!-- Background image -->
+            <div class="absolute inset-0 opacity-40">
+                <img
+                    src="/media/img/high tea two women eating at the table.jpeg"
+                    alt="Private tea house gathering"
+                    class="h-full w-full object-cover object-center"
+                    fetchpriority="high"
+                    loading="eager"
+                    decoding="async"
+                />
+            </div>
+
+            <!-- Cinematic overlays -->
+            <div class="absolute inset-0 bg-white/10"></div>
+
+            <div
+                class="absolute inset-0 bg-gradient-to-r
+                       from-white/40 via-white/20 to-transparent"
+            ></div>
+
+            <div
+                class="absolute inset-0 bg-gradient-to-t
+                       from-white/30 via-white/5 to-transparent"
+            ></div>
+
+            <!-- Subtle texture -->
+            <div
+                class="absolute inset-0 opacity-[0.045]"
+                style="
+                    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+                    background-size: 30px 30px;
+                "
+            ></div>
+
+            <!-- Hero content -->
+            <div
+                class="relative z-10 flex min-h-[92svh] items-end
+                       mx-auto max-w-7xl
+                       px-6 pb-16 pt-32
+                       md:px-12 md:pb-20
+                       lg:px-20 lg:pb-24
+                       xl:px-32"
+            >
+                <div class="max-w-5xl">
+
+                    <div
+                        class="fade-in flex items-center gap-3
+                               text-xs font-medium uppercase
+                               tracking-[0.28em] text-sage
+                               md:text-sm"
+                    >
+                        <span class="h-px w-10 bg-sage/60"></span>
+                        Tea house experiences
                     </div>
 
-                    <div class="fade-in delay-2 overflow-hidden rounded-sm shadow-lg">
-                        <img src="/media/img/high tea two women eating at the table.jpeg" alt="Private tea house gathering" class="h-full w-full object-cover" />
+                    <h1
+                        class="fade-in delay-1 mt-5 max-w-5xl
+                               font-serif text-5xl font-light leading-[0.95]
+                               tracking-tight text-charcoal
+                               sm:text-6xl
+                               md:text-7xl
+                               lg:text-8xl
+                               xl:text-[7rem]"
+                    >
+                        An afternoon
+                        <span class="block italic text-charcoal/80">
+                            where time slows down.
+                        </span>
+                    </h1>
+
+                    <p
+                        class="fade-in delay-2 mt-7 max-w-2xl
+                               text-base leading-relaxed text-charcoal/75
+                               md:text-lg lg:text-xl"
+                    >
+                        Intimate high tea gatherings designed for connection and celebration.
+                        Elegant tablescapes, handcrafted menus, and the warmth of Filipino
+                        hospitality in our garden tea house.
+                    </p>
+
+                    <div class="fade-in delay-3 mt-8 flex flex-wrap items-center gap-4">
+                        <a
+                            href="/contact"
+                            class="group inline-flex items-center justify-center
+                                   bg-sage px-7 py-4
+                                   text-sm font-medium uppercase
+                                   tracking-[0.14em] text-warm-white
+                                   transition-all duration-300
+                                   hover:-translate-y-0.5
+                                   hover:bg-sage-dark hover:shadow-xl"
+                        >
+                            <span>Reserve Private Tea</span>
+                            <span
+                                class="ml-4 transition-transform duration-300
+                                       group-hover:translate-x-1"
+                            >
+                                →
+                            </span>
+                        </a>
+
+                        <a
+                            href="/events"
+                            class="group inline-flex items-center gap-3
+                                   px-2 py-4
+                                   text-sm uppercase tracking-[0.14em]
+                                   text-sage"
+                        >
+                            <span>See Upcoming Dates</span>
+                            <span
+                                class="h-px w-8 bg-sage/50
+                                       transition-all duration-300
+                                       group-hover:w-12 group-hover:bg-sage"
+                            ></span>
+                        </a>
+                    </div>
+
+                    <!-- Experience snapshot -->
+                    <div
+                        class="fade-in delay-4 mt-10 flex flex-wrap
+                               items-center gap-x-7 gap-y-3
+                               text-sm text-stone"
+                    >
+                        <span>30-50 guest capacity</span>
+
+                        <span class="hidden h-1 w-1 rounded-full bg-sage/40 sm:block"></span>
+
+                        <span>2-3 hour experience</span>
+
+                        <span class="hidden h-1 w-1 rounded-full bg-sage/40 sm:block"></span>
+
+                        <span>Curated menus</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Scroll cue -->
+            <div
+                class="absolute bottom-7 right-6 z-10 hidden
+                       items-center gap-3
+                       text-[10px] uppercase tracking-[0.25em]
+                       text-charcoal/50
+                       sm:flex md:right-12
+                       lg:right-20 xl:right-32"
+            >
+                <span>Explore the tea house</span>
+                <span class="h-10 w-px bg-charcoal/20"></span>
+            </div>
         </section>
 
-        <section class="bg-warm-white py-20 md:py-24">
-            <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center">
-                    <p class="section-label fade-in">Why hosts choose private tea</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">
+
+        <!-- =========================================================
+             WHY CHOOSE PRIVATE TEA
+        ========================================================== -->
+        <section class="relative overflow-hidden bg-warm-white py-20 md:py-24 lg:py-28">
+
+            <div
+                class="pointer-events-none absolute left-0 top-0
+                       h-64 w-64 -translate-x-1/2 -translate-y-1/2
+                       rounded-full border border-sage/10"
+            ></div>
+
+            <div
+                class="mx-auto max-w-7xl px-6
+                       md:px-12 lg:px-20 xl:px-32"
+            >
+                <div class="mx-auto max-w-4xl text-center">
+
+                    <p class="section-label fade-in">
+                        Why hosts choose private tea
+                    </p>
+
+                    <h2
+                        class="fade-in delay-1 mt-4
+                               font-serif text-4xl font-light
+                               leading-tight text-charcoal
+                               md:text-5xl lg:text-6xl"
+                    >
                         Elegant without being formal. Intimate without being exclusive.
                     </h2>
+
                 </div>
 
-                <div class="mt-12 grid gap-6 md:grid-cols-3">
-                    <article class="fade-in border border-sage/10 bg-cream p-7 rounded-sm">
-                        <div class="mb-4 text-3xl">☕</div>
-                        <h3 class="font-serif text-2xl text-charcoal">Effortless elegance</h3>
-                        <p class="mt-3 text-stone leading-relaxed">
-                            We handle every detail — from tablescapes to service — so you can focus on celebrating your guests.
-                        </p>
-                    </article>
 
-                    <article class="fade-in delay-1 border border-sage/10 bg-cream p-7 rounded-sm">
-                        <div class="mb-4 text-3xl">🌸</div>
-                        <h3 class="font-serif text-2xl text-charcoal">Beautiful setting</h3>
-                        <p class="mt-3 text-stone leading-relaxed">
-                            Our tea house is already stunning — your guests walk in and immediately feel the care we put into every detail.
-                        </p>
-                    </article>
+                <div class="mt-14 grid gap-5 lg:grid-cols-3">
 
-                    <article class="fade-in delay-2 border border-sage/10 bg-cream p-7 rounded-sm">
-                        <div class="mb-4 text-3xl">❤️</div>
-                        <h3 class="font-serif text-2xl text-charcoal">Genuine hospitality</h3>
-                        <p class="mt-3 text-stone leading-relaxed">
-                            Guests feel truly welcomed. It's not transactional — it's personal, warm, and rooted in care.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
+                    <article
+                        class="fade-in group relative overflow-hidden
+                               rounded-sm border border-sage/20
+                               bg-cream-warm p-8
+                               transition-all duration-500
+                               hover:-translate-y-1 hover:shadow-xl hover:border-sage/40"
+                    >
+                        <div
+                            class="absolute right-0 top-0
+                                   h-24 w-24 translate-x-1/3 -translate-y-1/3
+                                   rounded-full border border-sand/20"
+                        ></div>
 
-        <section class="bg-cream py-24 md:py-32">
-            <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid items-center gap-12 lg:grid-cols-2">
-                    <div>
-                        <p class="section-label fade-in">Perfect for</p>
-                        <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light leading-tight text-charcoal">
-                            Any moment worth celebrating.
-                        </h2>
-                        <div class="mt-6 space-y-5 text-lg leading-relaxed text-stone">
-                            <p>
-                                Whether it's a bridal shower, birthday, mother-daughter date, or simply gathering your closest friends, private tea is the perfect canvas for your celebration.
+                        <div class="relative">
+                            <div
+                                class="mb-7 flex h-12 w-12 items-center
+                                       justify-center rounded-full
+                                       bg-sage/15 text-2xl"
+                            >
+                                ☕
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                Effortless elegance
+                            </h3>
+
+                            <p class="mt-4 leading-relaxed text-stone">
+                                We handle every detail — from tablescapes to service —
+                                so you can focus on celebrating your guests.
                             </p>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="grid gap-6">
-                        <div class="fade-in border border-sage/10 bg-warm-white p-6 rounded-sm">
-                            <p class="text-xs uppercase tracking-[0.2em] text-sage">Bridal showers</p>
-                            <h3 class="mt-3 font-serif text-2xl text-charcoal">Celebration with meaning</h3>
-                            <p class="mt-3 text-stone leading-relaxed">An elegant afternoon honoring the bride-to-be in a space that feels personal and special.</p>
+
+                    <article
+                        class="fade-in delay-1 group relative overflow-hidden
+                               rounded-sm border border-sage/20
+                               bg-cream-warm p-8
+                               transition-all duration-500
+                               hover:-translate-y-1 hover:shadow-xl hover:border-sage/40"
+                    >
+                        <div
+                            class="absolute right-0 top-0
+                                   h-24 w-24 translate-x-1/3 -translate-y-1/3
+                                   rounded-full border border-sand/20"
+                        ></div>
+
+                        <div class="relative">
+                            <div
+                                class="mb-7 flex h-12 w-12 items-center
+                                       justify-center rounded-full
+                                       bg-sage/15 text-2xl"
+                            >
+                                🌸
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                Beautiful setting
+                            </h3>
+
+                            <p class="mt-4 leading-relaxed text-stone">
+                                Our tea house is already stunning — your guests walk in
+                                and immediately feel the care we put into every detail.
+                            </p>
                         </div>
-                        <div class="fade-in delay-1 border border-sage/10 bg-warm-white p-6 rounded-sm">
-                            <p class="text-xs uppercase tracking-[0.2em] text-sage">Milestone birthdays</p>
-                            <h3 class="mt-3 font-serif text-2xl text-charcoal">A day to remember</h3>
-                            <p class="mt-3 text-stone leading-relaxed">Gather the people who matter most. Our team creates an atmosphere of warmth and celebration.</p>
+                    </article>
+
+
+                    <article
+                        class="fade-in delay-2 group relative overflow-hidden
+                               rounded-sm border border-sage/20
+                               bg-cream-warm p-8
+                               transition-all duration-500
+                               hover:-translate-y-1 hover:shadow-xl hover:border-sage/40"
+                    >
+                        <div
+                            class="absolute right-0 top-0
+                                   h-24 w-24 translate-x-1/3 -translate-y-1/3
+                                   rounded-full border border-sand/20"
+                        ></div>
+
+                        <div class="relative">
+                            <div
+                                class="mb-7 flex h-12 w-12 items-center
+                                       justify-center rounded-full
+                                       bg-sage/15 text-2xl"
+                            >
+                                ❤️
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                Genuine hospitality
+                            </h3>
+
+                            <p class="mt-4 leading-relaxed text-stone">
+                                Guests feel truly welcomed. It's not transactional —
+                                it's personal, warm, and rooted in care.
+                            </p>
                         </div>
-                        <div class="fade-in delay-2 border border-sage/10 bg-warm-white p-6 rounded-sm">
-                            <p class="text-xs uppercase tracking-[0.2em] text-sage">Girl's day out</p>
-                            <h3 class="mt-3 font-serif text-2xl text-charcoal">Connection and conversation</h3>
-                            <p class="mt-3 text-stone leading-relaxed">A destination gathering where friends, sisters, or colleagues pause and savor time together.</p>
-                        </div>
-                    </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="bg-warm-white py-20 md:py-24">
-            <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="text-center max-w-3xl mx-auto">
-                    <p class="section-label fade-in">The menu</p>
-                    <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">
+
+        <!-- =========================================================
+             PERFECT FOR
+        ========================================================== -->
+        <section class="bg-cream py-24 md:py-32 lg:py-36">
+
+            <div
+                class="mx-auto max-w-7xl px-6
+                       md:px-12 lg:px-20 xl:px-32"
+            >
+
+                <div class="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+
+                    <!-- Content -->
+                    <div>
+
+                        <p class="section-label fade-in">
+                            Perfect for
+                        </p>
+
+                        <h2
+                            class="fade-in delay-1 mt-4
+                                   font-serif text-4xl font-light
+                                   leading-tight text-charcoal
+                                   md:text-5xl lg:text-6xl"
+                        >
+                            Any moment worth celebrating.
+                        </h2>
+
+                        <div class="fade-in delay-2 mt-7 space-y-5 text-lg leading-relaxed text-stone">
+                            <p>
+                                Whether it's a bridal shower, birthday, mother-daughter date,
+                                or simply gathering your closest friends, private tea is the
+                                perfect canvas for your celebration.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Experience cards -->
+                    <div class="grid gap-5">
+
+                        <div
+                            class="fade-in relative overflow-hidden
+                                   border-l-4 border-l-sage border border-sage/20 bg-warm-white
+                                   p-7 md:p-8"
+                        >
+                            <div class="mb-4 flex items-center justify-between">
+                                <p class="text-xs uppercase tracking-[0.2em] text-sage font-semibold">
+                                    Bridal showers
+                                </p>
+
+                                <span class="text-sm text-gold font-semibold">
+                                    01
+                                </span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                Celebration with meaning
+                            </h3>
+
+                            <p class="mt-3 leading-relaxed text-stone">
+                                An elegant afternoon honoring the bride-to-be in a space
+                                that feels personal and special.
+                            </p>
+                        </div>
+
+
+                        <div
+                            class="fade-in delay-1 relative overflow-hidden
+                                   border-l-4 border-l-sage border border-sage/20 bg-warm-white
+                                   p-7 md:p-8"
+                        >
+                            <div class="mb-4 flex items-center justify-between">
+                                <p class="text-xs uppercase tracking-[0.2em] text-sage font-semibold">
+                                    Milestone birthdays
+                                </p>
+
+                                <span class="text-sm text-gold font-semibold">
+                                    02
+                                </span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                A day to remember
+                            </h3>
+
+                            <p class="mt-3 leading-relaxed text-stone">
+                                Gather the people who matter most. Our team creates an
+                                atmosphere of warmth and celebration.
+                            </p>
+                        </div>
+
+
+                        <div
+                            class="fade-in delay-2 relative overflow-hidden
+                                   border-l-4 border-l-sage border border-sage/20 bg-warm-white
+                                   p-7 md:p-8"
+                        >
+                            <div class="mb-4 flex items-center justify-between">
+                                <p class="text-xs uppercase tracking-[0.2em] text-sage font-semibold">
+                                    Girl's day out
+                                </p>
+
+                                <span class="text-sm text-gold font-semibold">
+                                    03
+                                </span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl text-charcoal">
+                                Connection and conversation
+                            </h3>
+
+                            <p class="mt-3 leading-relaxed text-stone">
+                                A destination gathering where friends, sisters, or colleagues
+                                pause and savor time together.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             MENU OPTIONS
+        ========================================================== -->
+        <section class="bg-warm-white py-20 md:py-24 lg:py-28">
+
+            <div
+                class="mx-auto max-w-7xl px-6
+                       md:px-12 lg:px-20 xl:px-32"
+            >
+
+                <div class="mx-auto max-w-3xl text-center">
+
+                    <p class="section-label fade-in">
+                        The menu
+                    </p>
+
+                    <h2
+                        class="fade-in delay-1 mt-4
+                               font-serif text-4xl font-light
+                               leading-tight text-charcoal
+                               md:text-5xl lg:text-6xl"
+                    >
                         Two curated experiences to choose from.
                     </h2>
+
                 </div>
 
-                <div class="mt-12 grid gap-6 md:grid-cols-2">
-                    <div class="fade-in bg-cream border border-sage/10 p-8 rounded-sm">
-                        <div class="text-2xl mb-4">🇵🇭</div>
-                        <h3 class="font-serif text-3xl text-charcoal mb-4">Filipino Inspired</h3>
-                        <p class="text-stone leading-relaxed mb-6">
-                            Heritage recipes passed through three generations. Delicate ube pastries, savory Filipino specialties, handcrafted sweets, and premium tea service.
+
+                <div class="mt-14 grid gap-5 sm:grid-cols-2">
+
+                    <div
+                        class="fade-in group rounded-sm
+                               border border-sage/20
+                               bg-cream-warm p-8
+                               transition-all duration-300
+                               hover:-translate-y-1 hover:shadow-lg hover:border-sage/40"
+                    >
+                        <div
+                            class="mb-5 flex h-12 w-12 items-center
+                                   justify-center rounded-full
+                                   bg-sage/15 text-2xl
+                                   transition-transform duration-300
+                                   group-hover:scale-110"
+                        >
+                            🇵🇭
+                        </div>
+
+                        <h3 class="font-serif text-3xl text-charcoal">
+                            Filipino Inspired
+                        </h3>
+
+                        <p class="mt-3 leading-relaxed text-stone">
+                            Heritage recipes passed through three generations.
+                            Delicate ube pastries, savory Filipino specialties,
+                            handcrafted sweets, and premium tea service.
                         </p>
-                        <ul class="space-y-3 text-stone">
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Seasonal ube and specialty pastries</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Savory bites rooted in Cebuano tradition</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Artisan tea selection</li>
+
+                        <ul class="mt-6 space-y-3 text-stone">
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Seasonal ube and specialty pastries</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Savory bites rooted in Cebuano tradition</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Artisan tea selection</span>
+                            </li>
                         </ul>
                     </div>
 
-                    <div class="fade-in delay-1 bg-cream border border-sage/10 p-8 rounded-sm">
-                        <div class="text-2xl mb-4">🇬🇧</div>
-                        <h3 class="font-serif text-3xl text-charcoal mb-4">Royal High Tea</h3>
-                        <p class="text-stone leading-relaxed mb-6">
-                            Classic afternoon tea experience. Delicate finger sandwiches, fresh pastries, fruit, scones with clotted cream, and a premium tea service.
+
+                    <div
+                        class="fade-in delay-1 group rounded-sm
+                               border border-sage/20
+                               bg-cream-warm p-8
+                               transition-all duration-300
+                               hover:-translate-y-1 hover:shadow-lg hover:border-sage/40"
+                    >
+                        <div
+                            class="mb-5 flex h-12 w-12 items-center
+                                   justify-center rounded-full
+                                   bg-sage/15 text-2xl
+                                   transition-transform duration-300
+                                   group-hover:scale-110"
+                        >
+                            🇬🇧
+                        </div>
+
+                        <h3 class="font-serif text-3xl text-charcoal">
+                            Royal High Tea
+                        </h3>
+
+                        <p class="mt-3 leading-relaxed text-stone">
+                            Classic afternoon tea experience. Delicate finger
+                            sandwiches, fresh pastries, fruit, scones with
+                            clotted cream, and a premium tea service.
                         </p>
-                        <ul class="space-y-3 text-stone">
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Tiered presentation</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Elegant finger sandwiches & pastries</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Premium loose-leaf tea selection</li>
+
+                        <ul class="mt-6 space-y-3 text-stone">
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Tiered presentation</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Elegant finger sandwiches & pastries</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Premium loose-leaf tea selection</span>
+                            </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="bg-cream py-24 md:py-32">
-            <div class="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 xl:px-32">
-                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
-                    <div class="overflow-hidden rounded-sm">
-                        <img src="/media/img/collage-3_4.webp" alt="Tea house table setting" class="h-full w-full object-cover" />
+
+        <!-- =========================================================
+             THE EXPERIENCE
+        ========================================================== -->
+        <section class="bg-cream py-24 md:py-32 lg:py-36">
+
+            <div
+                class="mx-auto max-w-7xl px-6
+                       md:px-12 lg:px-20 xl:px-32"
+            >
+
+                <div class="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+
+                    <!-- Image -->
+                    <div
+                        class="fade-in relative overflow-hidden rounded-sm
+                               shadow-xl"
+                    >
+                        <img
+                            src="/media/img/collage-3_4.webp"
+                            alt="Tea house table setting"
+                            class="aspect-[4/3] h-full w-full object-cover
+                                   transition-transform duration-700
+                                   hover:scale-[1.03]"
+                            loading="lazy"
+                        />
+
+                        <div
+                            class="absolute inset-0
+                                   bg-gradient-to-t
+                                   from-charcoal/20 to-transparent"
+                        ></div>
                     </div>
 
+
+                    <!-- Content -->
                     <div>
-                        <p class="section-label fade-in">The experience</p>
-                        <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light leading-tight text-charcoal">
+
+                        <p class="section-label fade-in">
+                            The experience
+                        </p>
+
+                        <h2
+                            class="fade-in delay-1 mt-4
+                                   font-serif text-4xl font-light
+                                   leading-tight text-charcoal
+                                   md:text-5xl lg:text-6xl"
+                        >
                             Every detail is curated for your celebration.
                         </h2>
-                        <p class="fade-in delay-2 mt-6 text-lg leading-relaxed text-stone">
-                            From the moment your guests arrive, they'll feel the intention we put into every moment. Beautiful table settings, thoughtful service, and the warmth that makes memories.
+
+                        <p
+                            class="fade-in delay-2 mt-6
+                                   text-lg leading-relaxed text-stone"
+                        >
+                            From the moment your guests arrive, they'll feel the
+                            intention we put into every moment. Beautiful table
+                            settings, thoughtful service, and the warmth that
+                            makes memories.
                         </p>
-                        <ul class="mt-8 space-y-4 text-stone">
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Customizable décor and theme options</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Special dietary accommodations</li>
-                            <li class="flex gap-3"><span class="text-sage">◈</span> Flexible 2-3 hour time blocks</li>
+
+                        <ul class="fade-in delay-3 mt-8 space-y-4 text-stone">
+
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Customizable décor and theme options</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Special dietary accommodations</span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="mt-1 text-sage">◈</span>
+                                <span>Flexible 2-3 hour time blocks</span>
+                            </li>
+
                         </ul>
+
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="relative overflow-hidden py-32 md:py-40 text-center text-white">
-            <div class="absolute inset-0 z-0">
-                <img src="/media/img/AG1_4.jpg" alt="Tea house sunset" class="w-full h-full object-cover" />
+
+        <!-- =========================================================
+             CTA / READY TO GATHER
+        ========================================================== -->
+        <section class="relative isolate overflow-hidden bg-warm-white py-32 md:py-40">
+
+            <!-- Background -->
+            <div class="absolute inset-0">
+
+                <img
+                    src="/media/img/AG1_4.jpg"
+                    alt="Tea house sunset"
+                    class="h-full w-full object-cover opacity-30"
+                    loading="lazy"
+                />
+
             </div>
-            <div class="absolute inset-0 bg-charcoal/50 z-[1]"></div>
-            <div class="relative z-[2] max-w-3xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
-                <p class="section-label text-white/80 fade-in">Ready to gather?</p>
-                <h2 class="fade-in font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
+
+            <div class="absolute inset-0 bg-white/60"></div>
+
+            <div
+                class="absolute inset-0 bg-gradient-to-t
+                       from-white/40 via-white/10 to-white/20"
+            ></div>
+
+
+            <!-- Content -->
+            <div
+                class="relative z-10 mx-auto max-w-4xl
+                       px-6 text-center text-charcoal
+                       md:px-12 lg:px-20 xl:px-32"
+            >
+
+                <p class="section-label text-sage fade-in">
+                    Ready to gather?
+                </p>
+
+                <h2
+                    class="fade-in mt-4
+                           font-serif text-4xl font-light
+                           leading-tight
+                           sm:text-5xl
+                           md:text-6xl"
+                >
                     Let's create an afternoon to remember.
                 </h2>
-                <p class="fade-in delay-1 text-lg md:text-xl leading-relaxed mb-8 text-white/80">
-                    Check availability, explore menu options, and book your private tea experience.
+
+                <p
+                    class="fade-in delay-1 mx-auto mt-6 max-w-2xl
+                           text-lg leading-relaxed text-charcoal/75
+                           md:text-xl"
+                >
+                    Check availability, explore menu options, and book your
+                    private tea experience.
                 </p>
-                <div class="fade-in delay-2 flex flex-wrap gap-4 justify-center">
-                    <a href="/contact" class="btn-primary">Reserve Private Tea</a>
-                    <a href="/contact" class="btn-secondary border-white text-white hover:bg-white hover:text-charcoal">Inquire About Dates</a>
+
+                <div
+                    class="fade-in delay-2 mt-9
+                           flex flex-wrap justify-center gap-4"
+                >
+
+                    <a
+                        href="/contact"
+                        class="group inline-flex items-center justify-center
+                               bg-sage px-7 py-4
+                               text-sm font-medium uppercase
+                               tracking-[0.14em] text-warm-white
+                               transition-all duration-300
+                               hover:-translate-y-0.5
+                               hover:bg-sage-dark hover:shadow-xl"
+                    >
+                        <span>Reserve Private Tea</span>
+
+                        <span
+                            class="ml-4 transition-transform duration-300
+                                   group-hover:translate-x-1"
+                        >
+                            →
+                        </span>
+                    </a>
+
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center
+                               border border-sage/40
+                               px-7 py-4
+                               text-sm font-medium uppercase
+                               tracking-[0.14em] text-sage
+                               transition-all duration-300
+                               hover:bg-sage hover:text-white"
+                    >
+                        Inquire About Dates
+                    </a>
+
                 </div>
+
             </div>
         </section>
+
+        <!-- Mobile CTA -->
+        <div
+            class="fixed inset-x-0 bottom-0 z-40
+                   border-t border-charcoal/10
+                   bg-warm-white/95 p-3
+                   shadow-[0_-8px_30px_rgba(0,0,0,0.08)]
+                   backdrop-blur-md
+                   md:hidden"
+        >
+            <a
+                href="/contact"
+                class="flex w-full items-center justify-center
+                       bg-charcoal px-5 py-3.5
+                       text-sm font-medium uppercase
+                       tracking-[0.12em] text-white"
+            >
+                Reserve Private Tea
+            </a>
+        </div>
+
     </main>
 </BaseLayout>
+
+
+<style>
+    .fade-in {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: fadeInUp 0.7s ease forwards;
+    }
+
+    .fade-in.delay-1 {
+        animation-delay: 0.08s;
+    }
+
+    .fade-in.delay-2 {
+        animation-delay: 0.16s;
+    }
+
+    .fade-in.delay-3 {
+        animation-delay: 0.24s;
+    }
+
+    .fade-in.delay-4 {
+        animation-delay: 0.32s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+            opacity: 1;
+            transform: none;
+            animation: none;
+        }
+
+        *,
+        *::before,
+        *::after {
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+        }
+    }
+</style>
