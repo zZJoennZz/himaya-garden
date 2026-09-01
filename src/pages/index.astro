@@ -11,16 +11,17 @@ import EventCalendar from '../components/EventCalendar.astro';
     }
 
     .home-flow > .home-hero { order: 1; }
-    .home-flow > .home-social-proof { order: 2; }
-    .home-flow > .home-ways { order: 3; }
-    .home-flow > .home-high-tea { order: 4; }
-    .home-flow > .home-garden { order: 5; }
-    .home-flow > .home-food { order: 6; }
-    .home-flow > .home-calendar { order: 7; }
-    .home-flow > .home-included { order: 8; }
-    .home-flow > .home-founder { order: 9; }
-    .home-flow > .home-reviews { order: 10; }
-    .home-flow > .home-cta { order: 11; }
+    .home-flow > .home-utility { order: 2; } 
+    .home-flow > .home-social-proof { order: 3; }
+    .home-flow > .home-ways { order: 4; }
+    .home-flow > .home-high-tea { order: 5; }
+    .home-flow > .home-garden { order: 6; }
+    .home-flow > .home-food { order: 7; }
+    .home-flow > .home-calendar { order: 8; }
+    .home-flow > .home-included { order: 9; }
+    .home-flow > .home-founder { order: 10; }
+    .home-flow > .home-reviews { order: 11; }
+    .home-flow > .home-cta { order: 12; }
 
     h1 {
         font-family: 'Inter', sans-serif, serif !important;
@@ -97,11 +98,80 @@ import EventCalendar from '../components/EventCalendar.astro';
                 <div class="w-px h-12 bg-white/40"></div>
             </div>
         </section>
+        <section class="home-utility bg-sage py-8 md:py-10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32 text-center">
+                <p class="text-white text-[0.9375rem] font-light mb-6">
+                    Join the Himaya Garden Newsletter to learn more about our upcoming events, retreats, and workshops
+                </p>
+                <a
+                    href="https://himaya-garden-tucson.myflodesk.com/axy6okxvjb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center rounded-sm border border-white bg-white px-8 py-3 font-sans text-sm font-medium uppercase tracking-[0.15em] text-charcoal transition-all duration-[600ms] ease-out hover:bg-transparent hover:text-white hover:border-white active:scale-95 cursor-pointer"
+                >
+                    Subscribe Now
+                </a>
+            </div>
+        </section>
 
+        <div class="home-utility bg-cream-warm py-5 overflow-hidden whitespace-nowrap border-y border-sage/10">
+            <div class="inline-flex animate-marquee">
+                <!-- First set -->
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Weddings <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Retreats <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Baby Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Graduation Celebrations <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Bridal Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Bachelor's Parties <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Workshops <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    High Tea <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <!-- Duplicate set for seamless loop -->
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Weddings <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Retreats <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Baby Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Graduation Celebrations <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Bridal Showers <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Bachelor's Parties <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    Workshops <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+                <span class="font-serif text-lg text-sage px-8 inline-flex items-center gap-8">
+                    High Tea <span class="w-1 h-1 bg-sage rounded-full opacity-50"></span>
+                </span>
+            </div>
+        </div>
         <section class="home-social-proof py-16 md:py-20 bg-warm-white">
             <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div class="text-center mb-10">
-                    <p class="section-label fade-in">Social proof</p>
+                    <p class="section-label fade-in">What Our Guests Say</p>
                     <h2 class="fade-in delay-1 font-serif text-4xl md:text-5xl font-light text-charcoal">4.9 Google rating</h2>
                     <p class="fade-in delay-2 mt-3 text-sage text-lg">★★★★★ from guests who have gathered with us</p>
                 </div>
@@ -773,5 +843,6 @@ if (video && overlay && playButton) {
     .hidden {
         display: none;
     }
+    
 </style>
 </BaseLayout>
