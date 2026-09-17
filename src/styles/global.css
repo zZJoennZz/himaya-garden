@@ -90,7 +90,7 @@
   }
 
   .section-label {
-    @apply text-sage text-sm tracking-[0.3em] uppercase mb-6;
+    @apply text-sage font-bold text-lg tracking-[0.3em] uppercase mb-6;
   }
 
   .section-heading {
